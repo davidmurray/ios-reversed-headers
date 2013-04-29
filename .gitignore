@@ -16,3 +16,7 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+._*
+*.deb
+.theos
+.DS_Store
