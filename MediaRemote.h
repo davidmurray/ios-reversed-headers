@@ -10,7 +10,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-    // For use on the CFNotificationCenterGetLocalCenter center.
+    // For use on the CFNotificationCenterGetLocalCenter notification center.
     extern CFStringRef kMRMediaRemoteNowPlayingInfoDidChangeNotification;
     extern CFStringRef kMRMediaRemoteNowPlayingPlaybackQueueDidChangeNotification;
     extern CFStringRef kMRMediaRemotePickableRoutesDidChangeNotification;
@@ -62,8 +62,8 @@ extern "C" {
 
     extern Boolean MRMediaRemoteSendCommand(unsigned int command, int unknown0 /* use 0 */);
 
-    // 0 is play
-    // 1 is pause
+    // 0 is play.
+    // 1 is pause.
     // 2 is toggle play/pause.
     // 3 is stop.
     // 4 is go to next track.
@@ -74,7 +74,7 @@ extern "C" {
     // 9 is stop seeking.
     // 10 is start seeking on hyper mode (15 seconds).
     // 11 is stop seeking on hyper mode (15 seconds).
-    // 10 is stop seeking.
+    // 12 is go back for 15 seconds.
     // 13 is skip fifteen seconds.
 
     extern void MRMediaRemoteBeginRouteDiscovery();
