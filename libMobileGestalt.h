@@ -11,7 +11,7 @@
 extern "C" {
 #endif
 
-    extern CFPropertyListRef MGCopyAnswer(CFStringRef property);
+    CFPropertyListRef MGCopyAnswer(CFStringRef property);
 
     static const CFStringRef kMGDiskUsage = CFSTR("DiskUsage");
     static const CFStringRef kMGModelNumber = CFSTR("ModelNumber");

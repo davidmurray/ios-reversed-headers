@@ -21,74 +21,73 @@ extern "C" {
 
     // WiFi manager functions.
 
-    extern WiFiManagerRef WiFiManagerClientCreate(CFAllocatorRef allocator, int flags);
-    extern CFArrayRef WiFiManagerClientCopyDevices(WiFiManagerRef manager);
-    extern CFArrayRef WiFiManagerClientCopyNetworks(WiFiManagerRef manager);
-    extern WiFiDeviceClientRef WiFiManagerClientGetDevice();
-    extern void WiFiManagerClientScheduleWithRunLoop(WiFiManagerRef manager, CFRunLoopRef runLoop, CFStringRef mode);
-    extern void WiFiManagerClientUnscheduleFromRunLoop(WiFiManagerRef manager);
-    extern void WiFiManagerClientSetProperty(WiFiManagerRef manager, CFStringRef property, CFPropertyListRef value);
-    extern CFPropertyListRef WiFiManagerClientCopyProperty(WiFiManagerRef manager, CFStringRef property);
+    WiFiManagerRef WiFiManagerClientCreate(CFAllocatorRef allocator, int flags);
+    CFArrayRef WiFiManagerClientCopyDevices(WiFiManagerRef manager);
+    CFArrayRef WiFiManagerClientCopyNetworks(WiFiManagerRef manager);
+    WiFiDeviceClientRef WiFiManagerClientGetDevice();
+    void WiFiManagerClientScheduleWithRunLoop(WiFiManagerRef manager, CFRunLoopRef runLoop, CFStringRef mode);
+    void WiFiManagerClientUnscheduleFromRunLoop(WiFiManagerRef manager);
+    void WiFiManagerClientSetProperty(WiFiManagerRef manager, CFStringRef property, CFPropertyListRef value);
+    CFPropertyListRef WiFiManagerClientCopyProperty(WiFiManagerRef manager, CFStringRef property);
     // MIS is WiFi tethering (Mobile Internet Sharing).
-    extern int WiFiManagerClientGetMISState(WiFiManagerRef manager);
-    extern void WiFiManagerClientSetMISState(WiFiManagerRef manager, int state);
-    extern void WiFiManagerClientSetMisPassword(WiFiManagerRef manager, CFStringRef password);
-    extern void WiFiManagerClientSetMISDiscoveryState(WiFiManagerRef manager, int state);
-    extern int WiFiManagerClientGetMISDiscoveryState(WiFiManagerRef manager);
+    int WiFiManagerClientGetMISState(WiFiManagerRef manager);
+    void WiFiManagerClientSetMISState(WiFiManagerRef manager, int state);
+    void WiFiManagerClientSetMisPassword(WiFiManagerRef manager, CFStringRef password);
+    void WiFiManagerClientSetMISDiscoveryState(WiFiManagerRef manager, int state);
+    int WiFiManagerClientGetMISDiscoveryState(WiFiManagerRef manager);
 
     // WiFi network functions.
 
-    extern CFPropertyListRef WiFiNetworkGetProperty(WiFiNetworkRef network, CFStringRef property);
-    extern int WiFiNetworkGetIntProperty(WiFiNetworkRef network, CFStringRef property);
-    extern float WiFiNetworkGetFloatProperty(WiFiNetworkRef network, CFStringRef property);
-    extern CFStringRef WiFiNetworkCopyPassword(WiFiNetworkRef);
-    extern void WiFiNetworkSetPassword(WiFiNetworkRef network, CFStringRef password);
-    extern CFStringRef WiFiNetworkGetSSID(WiFiNetworkRef network);
-    extern float WiFiNetworkGetNetworkUsage(WiFiNetworkRef network);
-    extern Boolean WiFiNetworkIsWEP(WiFiNetworkRef network);
-    extern Boolean WiFiNetworkIsWPA(WiFiNetworkRef network);
-    extern Boolean WiFiNetworkIsEAP(WiFiNetworkRef network);
-    extern Boolean WiFiNetworkIsApplePersonalHotspot(WiFiNetworkRef network);
-    extern Boolean WiFiNetworkIsAdHoc(WiFiNetworkRef network);
-    extern Boolean WiFiNetworkIsHidden(WiFiNetworkRef network);
-    extern Boolean WiFiNetworkRequiresPassword(WiFiNetworkRef network);
-    extern Boolean WiFiNetworkRequiresUsername(WiFiNetworkRef network);
-    extern CFDateRef WiFiNetworkGetLastAssociationDate(WiFiNetworkRef network);
-    extern CFDictionaryRef WiFiNetworkCopyRecord(WiFiNetworkRef network);
+    CFPropertyListRef WiFiNetworkGetProperty(WiFiNetworkRef network, CFStringRef property);
+    int WiFiNetworkGetIntProperty(WiFiNetworkRef network, CFStringRef property);
+    float WiFiNetworkGetFloatProperty(WiFiNetworkRef network, CFStringRef property);
+    CFStringRef WiFiNetworkCopyPassword(WiFiNetworkRef);
+    void WiFiNetworkSetPassword(WiFiNetworkRef network, CFStringRef password);
+    CFStringRef WiFiNetworkGetSSID(WiFiNetworkRef network);
+    float WiFiNetworkGetNetworkUsage(WiFiNetworkRef network);
+    Boolean WiFiNetworkIsWEP(WiFiNetworkRef network);
+    Boolean WiFiNetworkIsWPA(WiFiNetworkRef network);
+    Boolean WiFiNetworkIsEAP(WiFiNetworkRef network);
+    Boolean WiFiNetworkIsApplePersonalHotspot(WiFiNetworkRef network);
+    Boolean WiFiNetworkIsAdHoc(WiFiNetworkRef network);
+    Boolean WiFiNetworkIsHidden(WiFiNetworkRef network);
+    Boolean WiFiNetworkRequiresPassword(WiFiNetworkRef network);
+    Boolean WiFiNetworkRequiresUsername(WiFiNetworkRef network);
+    CFDateRef WiFiNetworkGetLastAssociationDate(WiFiNetworkRef network);
+    CFDictionaryRef WiFiNetworkCopyRecord(WiFiNetworkRef network);
 
     // WiFi device client functions.
 
-    extern CFPropertyListRef WiFiDeviceClientCopyProperty(WiFiDeviceClientRef client, CFStringRef property);
-    extern WiFiNetworkRef WiFiDeviceClientCopyCurrentNetwork(WiFiDeviceClientRef client);
-    extern int WiFiDeviceClientGetPower(WiFiDeviceClientRef client);
-    extern void WiFiDeviceClientScanAsync(WiFiDeviceClientRef device, CFDictionaryRef dict, WiFiDeviceScanCallback callback, uint32_t flags);
-    extern void WiFiDeviceClientAssociateAsync(WiFiDeviceClientRef client, WiFiNetworkRef network, WiFiDeviceAssociateCallback callback, CFDictionaryRef dict);
-    extern void WiFiDeviceClientAssociateCancel(WiFiDeviceClientRef client);
-    extern void WiFiDeviceClientDisassociate(WiFiDeviceClientRef client);
-    extern CFStringRef WiFiDeviceClientGetInterfaceName(WiFiDeviceClientRef client);
+    CFPropertyListRef WiFiDeviceClientCopyProperty(WiFiDeviceClientRef client, CFStringRef property);
+    WiFiNetworkRef WiFiDeviceClientCopyCurrentNetwork(WiFiDeviceClientRef client);
+    int WiFiDeviceClientGetPower(WiFiDeviceClientRef client);
+    void WiFiDeviceClientScanAsync(WiFiDeviceClientRef device, CFDictionaryRef dict, WiFiDeviceScanCallback callback, uint32_t flags);
+    void WiFiDeviceClientAssociateAsync(WiFiDeviceClientRef client, WiFiNetworkRef network, WiFiDeviceAssociateCallback callback, CFDictionaryRef dict);
+    void WiFiDeviceClientAssociateCancel(WiFiDeviceClientRef client);
+    void WiFiDeviceClientDisassociate(WiFiDeviceClientRef client);
+    CFStringRef WiFiDeviceClientGetInterfaceName(WiFiDeviceClientRef client);
 
-    extern CFStringRef kWiFiATJTestModeEnabledKey;
-    extern CFStringRef kWiFiDeviceCapabilitiesKey;
-    extern CFStringRef kWiFiDeviceSupportsWAPIKey;
-    extern CFStringRef kWiFiDeviceSupportsWoWKey;
-    extern CFStringRef kWiFiDeviceVendorIDKey;
-    extern CFStringRef kWiFiLocaleTestParamsKey;
-    extern CFStringRef kWiFiLoggingDriverFileKey;
-    extern CFStringRef kWiFiLoggingDriverLoggingEnabledKey;
-    extern CFStringRef kWiFiLoggingEnabledKey;
-    extern CFStringRef kWiFiLoggingFileEnabledKey;
-    extern CFStringRef kWiFiLoggingFileKey;
-    extern CFStringRef kWiFiManagerDisableBlackListKey;
-    extern CFStringRef kWiFiNetworkEnterpriseProfileKey;
-    extern CFStringRef kWiFiPreferenceCustomNetworksSettingsKey;
-    extern CFStringRef kWiFiPreferenceEnhancedWoWEnabledKey;
-    extern CFStringRef kWiFiPreferenceMStageAutoJoinKey;
-    extern CFStringRef kWiFiRSSIThresholdKey; // '-80'
-    extern CFStringRef kWiFiScaledRSSIKey;
-    extern CFStringRef kWiFiScaledRateKey;
-    extern CFStringRef kWiFiStrengthKey;
-    extern CFStringRef kWiFiTetheringCredentialsKey;
-
+    CFStringRef kWiFiATJTestModeEnabledKey;
+    CFStringRef kWiFiDeviceCapabilitiesKey;
+    CFStringRef kWiFiDeviceSupportsWAPIKey;
+    CFStringRef kWiFiDeviceSupportsWoWKey;
+    CFStringRef kWiFiDeviceVendorIDKey;
+    CFStringRef kWiFiLocaleTestParamsKey;
+    CFStringRef kWiFiLoggingDriverFileKey;
+    CFStringRef kWiFiLoggingDriverLoggingEnabledKey;
+    CFStringRef kWiFiLoggingEnabledKey;
+    CFStringRef kWiFiLoggingFileEnabledKey;
+    CFStringRef kWiFiLoggingFileKey;
+    CFStringRef kWiFiManagerDisableBlackListKey;
+    CFStringRef kWiFiNetworkEnterpriseProfileKey;
+    CFStringRef kWiFiPreferenceCustomNetworksSettingsKey;
+    CFStringRef kWiFiPreferenceEnhancedWoWEnabledKey;
+    CFStringRef kWiFiPreferenceMStageAutoJoinKey;
+    CFStringRef kWiFiRSSIThresholdKey; // '-80'
+    CFStringRef kWiFiScaledRSSIKey;
+    CFStringRef kWiFiScaledRateKey;
+    CFStringRef kWiFiStrengthKey;
+    CFStringRef kWiFiTetheringCredentialsKey;
 
 #ifdef __cplusplus
 }
