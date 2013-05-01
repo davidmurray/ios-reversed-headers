@@ -2,8 +2,8 @@
 // Copyright (C) 2013 Cykey (David Murray) cykey@live.com
 // All rights reserved.
 
-#ifndef MOBILEWIFI_H
-#define MOBILEWIFI_H
+#ifndef _MOBILEWIFI_H_
+#define _MOBILEWIFI_H_
 
 #include <CoreFoundation/CoreFoundation.h>
 

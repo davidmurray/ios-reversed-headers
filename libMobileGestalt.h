@@ -2,8 +2,8 @@
 // 2013 (C) Cykey cykey@live.com
 // All rights reserved.
 
-#ifndef LIBMOBILEGESTALT_H
-#define LIBMOBILEGESTALT_H
+#ifndef _LIBMOBILEGESTALT_H_
+#define _LIBMOBILEGESTALT_H_
 
 #include <CoreFoundation/CoreFoundation.h>
 

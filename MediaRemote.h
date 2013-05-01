@@ -2,8 +2,8 @@
 // 2013 (C) Cykey cykey@live.com
 // All rights reserved.
 
-#ifndef MEDIAREMOTE_H
-#define MEDIAREMOTE_H
+#ifndef _MEDIAREMOTE_H_
+#define _MEDIAREMOTE_H_
 
 #include <CoreFoundation/CoreFoundation.h>
 
