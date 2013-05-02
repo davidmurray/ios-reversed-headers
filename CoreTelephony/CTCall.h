@@ -29,7 +29,7 @@ typedef enum {
 CFArrayRef CTCopyCurrentCalls(CFAllocatorRef allocator);
 
 CFStringRef CTCallCopyAddress(CFAllocatorRef allocator, CTCallRef call);
-CFStringRef CTCallCopyAddress(CFAllocatorRef allocator, CTCallRef call);
+CFStringRef CTCallCopyName(CFAllocatorRef allocator, CTCallRef call);
 
 double CTCallGetDuration(CTCallRef call);
 double CTCallGetStartTime(CTCallRef call);
