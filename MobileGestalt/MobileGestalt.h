@@ -1,15 +1,16 @@
 /*
- * libMobileGestalt headers
+ * libMobileGestalt header.
  */
 
 #ifndef _libMobileGestalt_H_
 #define _libMobileGestalt_H_
 
-#pragma once
-
 #include "CoreHeaders.h"
 
 #pragma mark - API
+
+__BEGIN_DECLS
+
 CFPropertyListRef MGCopyAnswer(CFStringRef property);
 
 #pragma mark - Identifying Information
@@ -137,7 +138,7 @@ static const CFStringRef kMGFaceTimeEncodings = CFSTR("FaceTimeEncodings");
 static const CFStringRef kMGFaceTimePreferredDecoding = CFSTR("FaceTimePreferredDecoding");
 static const CFStringRef kMGFaceTimePreferredEncoding = CFSTR("FaceTimePreferredEncoding");
 
-#pragma mark - More Junk
+#pragma mark - More Device Capabilities
 static const CFStringRef kMGDeviceSupportsFaceTime = CFSTR("DeviceSupportsFaceTime");
 static const CFStringRef kMGDeviceSupportsTethering = CFSTR("DeviceSupportsTethering");
 static const CFStringRef kMGDeviceSupportsSimplisticRoadMesh = CFSTR("DeviceSupportsSimplisticRoadMesh");
@@ -150,5 +151,6 @@ static const CFStringRef kMGDeviceSupports3DMaps = CFSTR("DeviceSupports3DMaps")
 static const CFStringRef kMGDeviceSupports3DImagery = CFSTR("DeviceSupports3DImagery");
 static const CFStringRef kMGDeviceSupports1080p = CFSTR("DeviceSupports1080p");
 
+__END_DECLS
 
-#endif
+#endif /* _libMobileGestalt_H_ */

@@ -1,30 +1,28 @@
 /*
- * Mobile WiFi framework header.
+ * MobileWiFi framework header.
  */
 
-#ifndef _MobileWifi_H_
-#define _MobileWifi_H_
-
-#pragma once
+#ifndef _MobileWiFi_H_
+#define _MobileWiFi_H_
 
 #include "CoreHeaders.h"
 
-#pragma mark - Things
+__BEGIN_DECLS
 
 /*
  * Opaque structure definitions.
  */
 
 typedef struct __WiFiDeviceClient *WiFiDeviceClientRef;
-typedef struct __WiFiNetwork  *WiFiNetworkRef;
-typedef struct __WiFiManager  *WiFiManagerRef;
+typedef struct __WiFiNetwork      *WiFiNetworkRef;
+typedef struct __WiFiManager      *WiFiManagerRef;
 
-typedef CFErrorRef* WiFiErrorRef;
+typedef CFErrorRef *WiFiErrorRef;
 
 typedef void (*WiFiDeviceScanCallback)(WiFiDeviceClientRef device, CFArrayRef results, WiFiErrorRef error, void *token);
 typedef void (*WiFiDeviceAssociateCallback)(WiFiDeviceClientRef device, WiFiNetworkRef network, CFDictionaryRef dict, WiFiErrorRef error, void *token);
 
-#pragma mark - Wifi Manager Functions
+#pragma mark - WiFi Manager Functions
 
 WiFiManagerRef WiFiManagerClientCreate(CFAllocatorRef allocator, int flags);
 
@@ -39,7 +37,7 @@ void WiFiManagerClientSetProperty(WiFiManagerRef manager, CFStringRef property, 
 
 CFPropertyListRef WiFiManagerClientCopyProperty(WiFiManagerRef manager, CFStringRef property);
 
-#pragma mark - MIS Mobile Internet Sharing Functions
+#pragma mark - MIS (Mobile Internet Sharing) Functions
 
 void WiFiManagerClientSetMISState(WiFiManagerRef manager, int state);
 void WiFiManagerClientSetMisPassword(WiFiManagerRef manager, CFStringRef password);
@@ -48,7 +46,7 @@ void WiFiManagerClientSetMISDiscoveryState(WiFiManagerRef manager, int state);
 int WiFiManagerClientGetMISState(WiFiManagerRef manager);
 int WiFiManagerClientGetMISDiscoveryState(WiFiManagerRef manager);
 
-#pragma mark - Wifi Network Functions
+#pragma mark - WiFi Network Functions
 
 CFPropertyListRef WiFiNetworkGetProperty(WiFiNetworkRef network, CFStringRef property);
 
@@ -76,7 +74,7 @@ CFDateRef WiFiNetworkGetLastAssociationDate(WiFiNetworkRef network);
 
 CFDictionaryRef WiFiNetworkCopyRecord(WiFiNetworkRef network);
 
-#pragma mark - Wifi device client functions
+#pragma mark - WiFi device client functions
 
 CFPropertyListRef WiFiDeviceClientCopyProperty(WiFiDeviceClientRef client, CFStringRef property);
 
@@ -115,4 +113,6 @@ CFStringRef kWiFiScaledRateKey;
 CFStringRef kWiFiStrengthKey;
 CFStringRef kWiFiTetheringCredentialsKey;
 
-#endif
+__END_DECLS
+
+#endif /* _MobileWiFi_H_ */

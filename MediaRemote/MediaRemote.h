@@ -5,11 +5,15 @@
 #ifndef _MediaRemote_H_
 #define _MediaRemote_H_
 
-#pragma once
-
 #include "CoreHeaders.h"
 
+__BEGIN_DECLS
+
 #pragma mark - CFNotificationCenter Things
+
+/*
+ * These are used on the local notification center.
+ */
 
 CFStringRef kMRMediaRemoteNowPlayingInfoDidChangeNotification;
 CFStringRef kMRMediaRemoteNowPlayingPlaybackQueueDidChangeNotification;
@@ -17,6 +21,7 @@ CFStringRef kMRMediaRemotePickableRoutesDidChangeNotification;
 CFStringRef kMRMediaRemoteNowPlayingApplicationDidChangeNotification;
 CFStringRef kMRMediaRemoteNowPlayingApplicationIsPlayingDidChangeNotification;
 CFStringRef kMRMediaRemoteRouteStatusDidChangeNotification;
+
 CFStringRef kMRMediaRemoteNowPlayingApplicationPIDUserInfoKey;
 CFStringRef kMRMediaRemoteNowPlayingApplicationIsPlayingUserInfoKey;
 CFStringRef kMRMediaRemoteNowPlayingInfoAlbum;
@@ -93,4 +98,6 @@ typedef void (^MRMediaRemoteGetNowPlayingApplicationPIDCompletion)(int PID);
 void MRMediaRemoteGetNowPlayingApplicationPID(dispatch_queue_t queue, MRMediaRemoteGetNowPlayingApplicationPIDCompletion completion);
 void MRMediaRemoteGetNowPlayingInfo(dispatch_queue_t queue, MRMediaRemoteGetNowPlayingInfoCompletion completion);
 
-#endif
+__END_DECLS
+
+#endif /* _MediaRemote_H_ */

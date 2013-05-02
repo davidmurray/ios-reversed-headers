@@ -1,16 +1,16 @@
 /*
- * CoreTelephony calling support
+ * CoreTelephony calling support.
  */
 
 #ifndef _CTCall_H_
 #define _CTCall_H_
 
-#pragma once
-
 #include "CoreHeaders.h"
 
+__BEGIN_DECLS
+
 /*
- * Opaque structure.
+ * Opaque structure definition.
  */
 
 typedef struct __CTCall *CTCallRef;
@@ -40,9 +40,6 @@ void CTCallHold(CTCallRef call);
 void CTCallResume(CTCallRef call);
 void CTCallDisconnect(CTCallRef call);
 
-/*
- * Use 0 for __reserved.
- */
-CTCallRef TPGetDisplayedCallFromCalls(uint32_t __reserved);
+__END_DECLS
 
-#endif
+#endif /* _CTCall_H_ */
