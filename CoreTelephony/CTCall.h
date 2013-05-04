@@ -27,9 +27,12 @@ typedef enum {
 #pragma mark - API
 
 CFArrayRef CTCopyCurrentCalls(CFAllocatorRef allocator);
+int CTGetCurrentCallCount();
 
 CFStringRef CTCallCopyAddress(CFAllocatorRef allocator, CTCallRef call);
 CFStringRef CTCallCopyName(CFAllocatorRef allocator, CTCallRef call);
+
+CFStringRef CTCallCopyUniqueStringID(CFAllocatorRef allocator, CTCallRef call);
 
 double CTCallGetDuration(CTCallRef call);
 double CTCallGetStartTime(CTCallRef call);
