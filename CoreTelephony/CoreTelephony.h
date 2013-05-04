@@ -6,6 +6,7 @@
 #define _CoreTelephony_H_
 
 #include "CoreHeaders.h"
-#include "CoreTelephony/CTCall.h"
+#include "CTCall.h"
+#include "CTTelephonyCenter.h"
 
 #endif
