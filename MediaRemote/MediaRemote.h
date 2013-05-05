@@ -22,6 +22,8 @@ CFStringRef kMRMediaRemoteNowPlayingApplicationDidChangeNotification;
 CFStringRef kMRMediaRemoteNowPlayingApplicationIsPlayingDidChangeNotification;
 CFStringRef kMRMediaRemoteRouteStatusDidChangeNotification;
 
+#pragma mark - Keys
+
 CFStringRef kMRMediaRemoteNowPlayingApplicationPIDUserInfoKey;
 CFStringRef kMRMediaRemoteNowPlayingApplicationIsPlayingUserInfoKey;
 CFStringRef kMRMediaRemoteNowPlayingInfoAlbum;
@@ -67,25 +69,31 @@ CFStringRef kMRMediaRemoteRouteStatusUserInfoKey;
 
 typedef enum {
     kMRPlay = 0,
-    kMRPause,
-    kMRTogglePlayPause,
-    kMRStop,
-    kMRNextTrack,
-    kMRPreviousTrack,
-    kMRToggleShuffle,
-    kMRToggleRepeat,
-    kMRStartSeek,
-    kMREndSeek,
-    kMRStartHyperSeek,      /* These are for 15 second durations. */
-    kMREndHyperSeek,
-    kMRGoBack,
-    kMRSkip,
+    kMRPause = 1,
+    kMRTogglePlayPause = 2,
+    kMRStop = 3,
+    kMRNextTrack = 4,
+    kMRPreviousTrack = 5,
+    kMRToggleShuffle = 6,
+    kMRToggleRepeat = 7,
+    kMRStartForwardSeek = 8,
+    kMREndForwardSeek = 9,
+    kMRStartBackwardSeek = 10,
+    kMREndBackwardSeek = 11,
+    kMRGoBackFifteenSeconds = 12,
+    kMRSkipFifteenSeconds = 13,
 } kMRCommand;
 
 /*
  * Use 0 for __reserved.
  */
 Boolean MRMediaRemoteSendCommand(kMRCommand command, uint32_t __reserved);
+
+void MRMediaRemoteSetPlaybackSpeed(int speed);
+void MRMediaRemoteSetElapsedTime(double elapsedTime);
+
+void MRMediaRemoteRegisterForNowPlayingNotifications(dispatch_queue_t queue);
+void MRMediaRemoteUnregisterForNowPlayingNotifications();
 
 void MRMediaRemoteBeginRouteDiscovery(void);
 void MRMediaRemoteEndRouteDiscovery(void);
@@ -94,9 +102,11 @@ CFArrayRef MRMediaRemoteCopyPickableRoutes();
 
 typedef void (^MRMediaRemoteGetNowPlayingInfoCompletion)(CFDictionaryRef information);
 typedef void (^MRMediaRemoteGetNowPlayingApplicationPIDCompletion)(int PID);
+typedef void (^MRMediaRemoteGetNowPlayingApplicationIsPlayingCompletion)(Boolean isPlaying);
 
 void MRMediaRemoteGetNowPlayingApplicationPID(dispatch_queue_t queue, MRMediaRemoteGetNowPlayingApplicationPIDCompletion completion);
 void MRMediaRemoteGetNowPlayingInfo(dispatch_queue_t queue, MRMediaRemoteGetNowPlayingInfoCompletion completion);
+void MRMediaRemoteGetNowPlayingApplicationIsPlaying(dispatch_queue_t queue, MRMediaRemoteGetNowPlayingApplicationIsPlayingCompletion completion);
 
 __END_DECLS
 
