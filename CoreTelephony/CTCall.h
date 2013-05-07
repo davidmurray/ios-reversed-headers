@@ -22,7 +22,7 @@ typedef enum {
     kCTCallStatusOutgoingInitiated,
     kCTCallStatusIncomingCall,
     kCTCallStatusIncomingCallEnded
-} kCTCallStatus;
+} CTCallStatus;
 
 #pragma mark - API
 
@@ -37,7 +37,7 @@ CFStringRef CTCallCopyUniqueStringID(CFAllocatorRef allocator, CTCallRef call);
 double CTCallGetDuration(CTCallRef call);
 double CTCallGetStartTime(CTCallRef call);
 
-kCTCallStatus CTCallGetStatus(CTCallRef call);
+CTCallStatus CTCallGetStatus(CTCallRef call);
 
 void CTCallHold(CTCallRef call);
 void CTCallResume(CTCallRef call);
