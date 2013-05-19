@@ -24,6 +24,13 @@ typedef enum {
     kCTCallStatusIncomingCallEnded
 } CTCallStatus;
 
+typedef CFStringRef CTCallType;
+
+CFStringRef kCTCallTypeNormal;
+CFStringRef kCTCallTypeVOIP;
+CFStringRef kCTCallTypeVideoConference;
+CFStringRef kCTCallTypeVoicemail;
+
 #pragma mark - API
 
 CFArrayRef CTCopyCurrentCalls(CFAllocatorRef allocator);
@@ -38,6 +45,10 @@ double CTCallGetDuration(CTCallRef call);
 double CTCallGetStartTime(CTCallRef call);
 
 CTCallStatus CTCallGetStatus(CTCallRef call);
+CTCallType CTCallGetCallType(CTCallRef call);
+
+/* Pass NULL to delete all calls. */
+void CTCallDeleteAllCallsBeforeDate(CFDateRef date);
 
 void CTCallHold(CTCallRef call);
 void CTCallResume(CTCallRef call);
