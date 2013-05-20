@@ -38,6 +38,8 @@ int CTGetCurrentCallCount();
 
 CFStringRef CTCallCopyAddress(CFAllocatorRef allocator, CTCallRef call);
 CFStringRef CTCallCopyName(CFAllocatorRef allocator, CTCallRef call);
+CFStringRef CTCallCopyCountryCode(CFAllocatorRef allocator, CTCallRef call);
+CFStringRef CTCallCopyNetworkCode(CFAllocatorRef allocator, CTCallRef call);
 
 CFStringRef CTCallCopyUniqueStringID(CFAllocatorRef allocator, CTCallRef call);
 
@@ -49,15 +51,21 @@ CTCallType CTCallGetCallType(CTCallRef call);
 
 /* Pass NULL to delete all calls. */
 void CTCallDeleteAllCallsBeforeDate(CFDateRef date);
+void CTCallHistoryInvalidateCaches();
 
 void CTCallHold(CTCallRef call);
 void CTCallResume(CTCallRef call);
 void CTCallDisconnect(CTCallRef call);
 
+void CTCallListDisconnectAll();
+
 Boolean CTCallIsConferenced(CTCallRef call);
 Boolean CTCallIsAlerting(CTCallRef call);
 Boolean CTCallIsToVoicemail(CTCallRef call);
 Boolean CTCallIsOutgoing(CTCallRef call);
+
+void CTCallJoinConference(CTCallRef call);
+void CTCallLeaveConference(CTCallRef call);
 
 /*
  * The phone number passed in the dial functions must be normalized.
