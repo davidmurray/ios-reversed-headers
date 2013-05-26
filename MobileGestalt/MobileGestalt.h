@@ -14,6 +14,7 @@ __BEGIN_DECLS
 CFPropertyListRef MGCopyAnswer(CFStringRef property);
 
 #pragma mark - Identifying Information
+
 static const CFStringRef kMGDiskUsage = CFSTR("DiskUsage");
 static const CFStringRef kMGModelNumber = CFSTR("ModelNumber");
 static const CFStringRef kMGSIMTrayStatus = CFSTR("SIMTrayStatus");
@@ -30,9 +31,11 @@ static const CFStringRef kMGPartitionType = CFSTR("PartitionType");
 static const CFStringRef kMGUserAssignedDeviceName = CFSTR("UserAssignedDeviceName");
 
 #pragma mark - Bluetooth Information
+
 static const CFStringRef kMGBluetoothAddress = CFSTR("BluetoothAddress");
 
 #pragma mark - Battery Information
+
 static const CFStringRef kMGRequiredBatteryLevelForSoftwareUpdate = CFSTR("RequiredBatteryLevelForSoftwareUpdate");
 static const CFStringRef kMGBatteryIsFullyCharged = CFSTR("BatteryIsFullyCharged");
 static const CFStringRef kMGBatteryIsCharging = CFSTR("BatteryIsCharging");
@@ -40,6 +43,7 @@ static const CFStringRef kMGBatteryCurrentCapacity = CFSTR("BatteryCurrentCapaci
 static const CFStringRef kMGExternalPowerSourceConnected = CFSTR("ExternalPowerSourceConnected");
 
 #pragma mark - Baseband Information
+
 static const CFStringRef kMGBasebandSerialNumber = CFSTR("BasebandSerialNumber");
 static const CFStringRef kMGBasebandCertId = CFSTR("BasebandCertId");
 static const CFStringRef kMGBasebandChipId = CFSTR("BasebandChipId");
@@ -48,6 +52,7 @@ static const CFStringRef kMGBasebandFirmwareVersion = CFSTR("BasebandFirmwareVer
 static const CFStringRef kMGBasebandKeyHashInformation = CFSTR("BasebandKeyHashInformation");
 
 #pragma mark - TelephonyInformation
+
 static const CFStringRef kMGCarrierBundleInfo = CFSTR("CarrierBundleInfoArray");
 static const CFStringRef kMGCarrierInstallCapability = CFSTR("CarrierInstallCapability");
 static const CFStringRef kMGInternationalMobileEquipmentIdentity = CFSTR("InternationalMobileEquipmentIdentity");
@@ -55,6 +60,7 @@ static const CFStringRef kMGMobileSubscriberCountryCode = CFSTR("MobileSubscribe
 static const CFStringRef kMGMobileSubscriberNetworkCode = CFSTR("MobileSubscriberNetworkCode");
 
 #pragma mark - Device Information
+
 static const CFStringRef kMGChipID = CFSTR("ChipID");
 static const CFStringRef kMGComputerName = CFSTR("ComputerName");
 static const CFStringRef kMGDeviceVariant = CFSTR("DeviceVariant");
@@ -94,6 +100,7 @@ static const CFStringRef kMSupportedKeyboards = CFSTR("SupportedKeyboards");
 static const CFStringRef kMGTotalSystemAvailable = CFSTR("TotalSystemAvailable");
 
 #pragma mark - Capability Information
+
 static const CFStringRef kMGAllDeviceCapabilities = CFSTR("AllDeviceCapabilities");
 static const CFStringRef kMGAppleInternalInstallCapability = CFSTR("AppleInternalInstallCapability");
 static const CFStringRef kMGExternalChargeCapability = CFSTR("ExternalChargeCapability");
@@ -110,6 +117,7 @@ static const CFStringRef kMGIsThereEnoughBatteryLevelForSoftwareUpdate = CFSTR("
 static const CFStringRef kMGIsUIBuild = CFSTR("IsUIBuild");
 
 #pragma mark - Regional Behaviour
+
 static const CFStringRef kMGRegionalBehaviorAll = CFSTR("RegionalBehaviorAll");
 static const CFStringRef kMGRegionalBehaviorChinaBrick = CFSTR("RegionalBehaviorChinaBrick");
 static const CFStringRef kMGRegionalBehaviorEUVolumeLimit = CFSTR("RegionalBehaviorEUVolumeLimit");
@@ -123,12 +131,14 @@ static const CFStringRef kMGRegionalBehaviorShutterClick = CFSTR("RegionalBehavi
 static const CFStringRef kMGRegionalBehaviorVolumeLimit = CFSTR("RegionalBehaviorVolumeLimit");
 
 #pragma mark - Wireless Information
+
 static const CFStringRef kMGActiveWirelessTechnology = CFSTR("ActiveWirelessTechnology");
 static const CFStringRef kMGWifiAddress = CFSTR("WifiAddress");
 static const CFStringRef kMGWifiAddressData = CFSTR("WifiAddressData");
 static const CFStringRef kMGWifiVendor = CFSTR("WifiVendor");
 
 #pragma mark - FaceTime Information
+
 static const CFStringRef kMGFaceTimeBitRate2G = CFSTR("FaceTimeBitRate2G");
 static const CFStringRef kMGFaceTimeBitRate3G = CFSTR("FaceTimeBitRate3G");
 static const CFStringRef kMGFaceTimeBitRateLTE = CFSTR("FaceTimeBitRateLTE");
@@ -139,6 +149,7 @@ static const CFStringRef kMGFaceTimePreferredDecoding = CFSTR("FaceTimePreferred
 static const CFStringRef kMGFaceTimePreferredEncoding = CFSTR("FaceTimePreferredEncoding");
 
 #pragma mark - More Device Capabilities
+
 static const CFStringRef kMGDeviceSupportsFaceTime = CFSTR("DeviceSupportsFaceTime");
 static const CFStringRef kMGDeviceSupportsTethering = CFSTR("DeviceSupportsTethering");
 static const CFStringRef kMGDeviceSupportsSimplisticRoadMesh = CFSTR("DeviceSupportsSimplisticRoadMesh");

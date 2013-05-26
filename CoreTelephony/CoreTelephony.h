@@ -9,5 +9,6 @@
 #include "CTCall.h"
 #include "CTTelephonyCenter.h"
 #include "CTSetting.h"
+#include "CTIndicators.h"
 
 #endif

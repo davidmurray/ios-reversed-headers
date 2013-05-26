@@ -92,6 +92,8 @@ Boolean MRMediaRemoteSendCommand(kMRCommand command, uint32_t __reserved);
 void MRMediaRemoteSetPlaybackSpeed(int speed);
 void MRMediaRemoteSetElapsedTime(double elapsedTime);
 
+void MRMediaRemoteSetNowPlayingApplicationOverrideEnabled(Boolean enabled);
+
 void MRMediaRemoteRegisterForNowPlayingNotifications(dispatch_queue_t queue);
 void MRMediaRemoteUnregisterForNowPlayingNotifications();
 

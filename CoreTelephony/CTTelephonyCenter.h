@@ -16,9 +16,6 @@ void CTTelephonyCenterAddObserver(CFNotificationCenterRef center, const void *ob
 void CTTelephonyCenterRemoveObserver(CFNotificationCenterRef center, const void *observer, CFStringRef name, const void *object);
 void CTTelephonyCenterRemoveEveryObserver(CFNotificationCenterRef center, const void *observer);
 
-CFStringRef kCTCallStatusChangeNotification;
-CFStringRef kCTCallIdentificationChangeNotification;
-
 __END_DECLS
 
 #endif /* _CTTelephonyCenter_H_ */

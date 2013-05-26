@@ -71,6 +71,10 @@ int MobileInstallationUninstall(CFStringRef bundleIdentifier, CFDictionaryRef pa
 
 int MobileInstallationInstall(CFStringRef path, CFDictionaryRef parameters, MobileInstallationCallback callback, void *unknown);
 
+/* Same as MobileInstallationInstall. */
+
+int MobileInstallationUpgrade(CFStringRef path, CFDictionaryRef parameters, MobileInstallationCallback callback, void *unknown);
+
 /*
  * Used to rebuild the application map.
  * See http://gitweb.saurik.com/uikittools.git/blob/HEAD:/extrainst_.mm#l114

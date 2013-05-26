@@ -76,6 +76,11 @@ void CTCallLeaveConference(CTCallRef call);
 CTCallRef CTCallDial(CFStringRef number);
 CTCallRef CTCallDialEmergency(CFStringRef number);
 
+/* For use with the CoreTelephony notification system. */
+
+CFStringRef kCTCallStatusChangeNotification;
+CFStringRef kCTCallIdentificationChangeNotification;
+
 __END_DECLS
 
 #endif /* _CTCall_H_ */
