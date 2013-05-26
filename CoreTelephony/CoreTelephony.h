@@ -10,5 +10,6 @@
 #include "CTTelephonyCenter.h"
 #include "CTSetting.h"
 #include "CTIndicators.h"
+#include "CTCellularDataPlan.h"
 
 #endif
