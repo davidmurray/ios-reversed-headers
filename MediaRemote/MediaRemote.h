@@ -87,12 +87,12 @@ typedef enum {
 /*
  * Use 0 for __reserved.
  */
-Boolean MRMediaRemoteSendCommand(kMRCommand command, uint32_t __reserved);
+CFBooleanRef MRMediaRemoteSendCommand(kMRCommand command, uint32_t __reserved);
 
 void MRMediaRemoteSetPlaybackSpeed(int speed);
 void MRMediaRemoteSetElapsedTime(double elapsedTime);
 
-void MRMediaRemoteSetNowPlayingApplicationOverrideEnabled(Boolean enabled);
+void MRMediaRemoteSetNowPlayingApplicationOverrideEnabled(CFBooleanRef enabled);
 
 void MRMediaRemoteRegisterForNowPlayingNotifications(dispatch_queue_t queue);
 void MRMediaRemoteUnregisterForNowPlayingNotifications();
@@ -104,7 +104,7 @@ CFArrayRef MRMediaRemoteCopyPickableRoutes();
 
 typedef void (^MRMediaRemoteGetNowPlayingInfoCompletion)(CFDictionaryRef information);
 typedef void (^MRMediaRemoteGetNowPlayingApplicationPIDCompletion)(int PID);
-typedef void (^MRMediaRemoteGetNowPlayingApplicationIsPlayingCompletion)(Boolean isPlaying);
+typedef void (^MRMediaRemoteGetNowPlayingApplicationIsPlayingCompletion)(CFBooleanRef isPlaying);
 
 void MRMediaRemoteGetNowPlayingApplicationPID(dispatch_queue_t queue, MRMediaRemoteGetNowPlayingApplicationPIDCompletion completion);
 void MRMediaRemoteGetNowPlayingInfo(dispatch_queue_t queue, MRMediaRemoteGetNowPlayingInfoCompletion completion);

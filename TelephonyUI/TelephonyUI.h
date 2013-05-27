@@ -13,10 +13,10 @@
 __BEGIN_DECLS
 
 /*
- * Use 0 for __reserved.
+ * Use 0 for __unknown0.
  */
 
-CTCallRef TPGetDisplayedCallFromCalls(uint32_t __reserved);
+CTCallRef TPGetDisplayedCallFromCalls(int __unknown0);
 
 __END_DECLS
 

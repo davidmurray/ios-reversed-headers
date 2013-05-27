@@ -26,10 +26,10 @@ typedef enum {
 
 typedef CFStringRef CTCallType;
 
-CFStringRef kCTCallTypeNormal;
-CFStringRef kCTCallTypeVOIP;
-CFStringRef kCTCallTypeVideoConference;
-CFStringRef kCTCallTypeVoicemail;
+CTCallType kCTCallTypeNormal;
+CTCallType kCTCallTypeVOIP;
+CTCallType kCTCallTypeVideoConference;
+CTCallType kCTCallTypeVoicemail;
 
 #pragma mark - API
 
@@ -59,10 +59,10 @@ void CTCallDisconnect(CTCallRef call);
 
 void CTCallListDisconnectAll();
 
-Boolean CTCallIsConferenced(CTCallRef call);
-Boolean CTCallIsAlerting(CTCallRef call);
-Boolean CTCallIsToVoicemail(CTCallRef call);
-Boolean CTCallIsOutgoing(CTCallRef call);
+CFBooleanRef CTCallIsConferenced(CTCallRef call);
+CFBooleanRef CTCallIsAlerting(CTCallRef call);
+CFBooleanRef CTCallIsToVoicemail(CTCallRef call);
+CFBooleanRef CTCallIsOutgoing(CTCallRef call);
 
 void CTCallJoinConference(CTCallRef call);
 void CTCallLeaveConference(CTCallRef call);

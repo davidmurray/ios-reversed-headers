@@ -11,5 +11,6 @@
 #include "CTSetting.h"
 #include "CTIndicators.h"
 #include "CTCellularDataPlan.h"
+#include "CTSIMSupport.h"
 
 #endif
