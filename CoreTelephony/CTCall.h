@@ -53,6 +53,7 @@ CTCallType CTCallGetCallType(CTCallRef call);
 void CTCallDeleteAllCallsBeforeDate(CFDateRef date);
 void CTCallHistoryInvalidateCaches();
 
+void CTCallAnswer(CTCallRef call);
 void CTCallHold(CTCallRef call);
 void CTCallResume(CTCallRef call);
 void CTCallDisconnect(CTCallRef call);

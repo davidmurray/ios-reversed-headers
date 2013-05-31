@@ -82,12 +82,12 @@ typedef enum {
     kMREndBackwardSeek = 11,
     kMRGoBackFifteenSeconds = 12,
     kMRSkipFifteenSeconds = 13,
-} kMRCommand;
+} MRCommand;
 
 /*
  * Use 0 for __reserved.
  */
-CFBooleanRef MRMediaRemoteSendCommand(kMRCommand command, uint32_t __reserved);
+CFBooleanRef MRMediaRemoteSendCommand(MRCommand command, uint32_t __reserved);
 
 void MRMediaRemoteSetPlaybackSpeed(int speed);
 void MRMediaRemoteSetElapsedTime(double elapsedTime);
