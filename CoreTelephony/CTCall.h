@@ -60,10 +60,10 @@ void CTCallDisconnect(CTCallRef call);
 
 void CTCallListDisconnectAll();
 
-CFBooleanRef CTCallIsConferenced(CTCallRef call);
-CFBooleanRef CTCallIsAlerting(CTCallRef call);
-CFBooleanRef CTCallIsToVoicemail(CTCallRef call);
-CFBooleanRef CTCallIsOutgoing(CTCallRef call);
+Boolean CTCallIsConferenced(CTCallRef call);
+Boolean CTCallIsAlerting(CTCallRef call);
+Boolean CTCallIsToVoicemail(CTCallRef call);
+Boolean CTCallIsOutgoing(CTCallRef call);
 
 void CTCallJoinConference(CTCallRef call);
 void CTCallLeaveConference(CTCallRef call);

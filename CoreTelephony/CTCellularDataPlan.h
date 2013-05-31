@@ -11,8 +11,8 @@ __BEGIN_DECLS
 
 #pragma mark - API
 
-CFBooleanRef CTCellularDataPlanGetIsEnabled();
-void CTCellularDataPlanSetIsEnabled(CFBooleanRef enabled);
+Boolean CTCellularDataPlanGetIsEnabled();
+void CTCellularDataPlanSetIsEnabled(Boolean enabled);
 
 __END_DECLS
 

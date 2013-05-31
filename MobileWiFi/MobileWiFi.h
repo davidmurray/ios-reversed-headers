@@ -17,10 +17,8 @@ typedef struct __WiFiDeviceClient *WiFiDeviceClientRef;
 typedef struct __WiFiNetwork      *WiFiNetworkRef;
 typedef struct __WiFiManager      *WiFiManagerRef;
 
-typedef CFErrorRef *WiFiErrorRef;
-
-typedef void (*WiFiDeviceScanCallback)(WiFiDeviceClientRef device, CFArrayRef results, WiFiErrorRef error, void *token);
-typedef void (*WiFiDeviceAssociateCallback)(WiFiDeviceClientRef device, WiFiNetworkRef network, CFDictionaryRef dict, WiFiErrorRef error, void *token);
+typedef void (*WiFiDeviceScanCallback)(WiFiDeviceClientRef device, CFArrayRef results, CFErrorRef error, void *token);
+typedef void (*WiFiDeviceAssociateCallback)(WiFiDeviceClientRef device, WiFiNetworkRef network, CFDictionaryRef dict, CFErrorRef error, void *token);
 
 #pragma mark - WiFi Manager Functions
 
@@ -61,14 +59,14 @@ void WiFiNetworkSetPassword(WiFiNetworkRef network, CFStringRef password);
 
 float WiFiNetworkGetNetworkUsage(WiFiNetworkRef network);
 
-CFBooleanRef WiFiNetworkIsWEP(WiFiNetworkRef network);
-CFBooleanRef WiFiNetworkIsWPA(WiFiNetworkRef network);
-CFBooleanRef WiFiNetworkIsEAP(WiFiNetworkRef network);
-CFBooleanRef WiFiNetworkIsApplePersonalHotspot(WiFiNetworkRef network);
-CFBooleanRef WiFiNetworkIsAdHoc(WiFiNetworkRef network);
-CFBooleanRef WiFiNetworkIsHidden(WiFiNetworkRef network);
-CFBooleanRef WiFiNetworkRequiresPassword(WiFiNetworkRef network);
-CFBooleanRef WiFiNetworkRequiresUsername(WiFiNetworkRef network);
+Boolean WiFiNetworkIsWEP(WiFiNetworkRef network);
+Boolean WiFiNetworkIsWPA(WiFiNetworkRef network);
+Boolean WiFiNetworkIsEAP(WiFiNetworkRef network);
+Boolean WiFiNetworkIsApplePersonalHotspot(WiFiNetworkRef network);
+Boolean WiFiNetworkIsAdHoc(WiFiNetworkRef network);
+Boolean WiFiNetworkIsHidden(WiFiNetworkRef network);
+Boolean WiFiNetworkRequiresPassword(WiFiNetworkRef network);
+Boolean WiFiNetworkRequiresUsername(WiFiNetworkRef network);
 
 CFDateRef WiFiNetworkGetLastAssociationDate(WiFiNetworkRef network);
 
