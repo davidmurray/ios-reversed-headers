@@ -11,8 +11,8 @@
 # define __BEGIN_DECLS extern "C" {
 # define __END_DECLS }
 #else
-# define __BEGIN_DECLS extern {
-# define __END_DECLS }
+# define __BEGIN_DECLS /* empty */
+# define __END_DECLS /* empty */
 #endif
 
 #include <CoreFoundation/CoreFoundation.h>
