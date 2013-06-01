@@ -2,8 +2,8 @@
  * CoreTelephony registration system support.
  */
 
-#ifndef _CTRegistration_H_
-#define _CTRegistration_H_
+#ifndef CTREGISTRATION_H_
+#define CTREGISTRATION_H_
 
 #include "CoreHeaders.h"
 
@@ -12,37 +12,37 @@ __BEGIN_DECLS
 #pragma mark - API
 
 /* For use with the CoreTelephony notification system. */
-CFStringRef kCTRegistrationStatusChangedNotification;
-CFStringRef kCTRegistrationStateDurationReportNotification;
-CFStringRef kCTRegistrationServiceProviderNameChangedNotification;
-CFStringRef kCTRegistrationOperatorNameChangedNotification;
-CFStringRef kCTRegistrationNewServingNetworkNotification;
-CFStringRef kCTRegistrationDataStatusChangedNotification;
-CFStringRef kCTRegistrationDataActivateFailedNotification;
-CFStringRef kCTRegistrationCellularDataPlanHideIndicatorNotification;
-CFStringRef kCTRegistrationCellularDataPlanActivateFailedNotification;
-CFStringRef kCTRegistrationCustomerServiceProfileUpdateNotification;
-CFStringRef kCTRegistrationCellChangedNotification;
-CFStringRef kCTRegistrationCauseCodeNotification;
+extern CFStringRef kCTRegistrationStatusChangedNotification;
+extern CFStringRef kCTRegistrationStateDurationReportNotification;
+extern CFStringRef kCTRegistrationServiceProviderNameChangedNotification;
+extern CFStringRef kCTRegistrationOperatorNameChangedNotification;
+extern CFStringRef kCTRegistrationNewServingNetworkNotification;
+extern CFStringRef kCTRegistrationDataStatusChangedNotification;
+extern CFStringRef kCTRegistrationDataActivateFailedNotification;
+extern CFStringRef kCTRegistrationCellularDataPlanHideIndicatorNotification;
+extern CFStringRef kCTRegistrationCellularDataPlanActivateFailedNotification;
+extern CFStringRef kCTRegistrationCustomerServiceProfileUpdateNotification;
+extern CFStringRef kCTRegistrationCellChangedNotification;
+extern CFStringRef kCTRegistrationCauseCodeNotification;
 
 /* Service types. */
-CFStringRef kCTDataConnectionServiceType3GFaceTimeAuthentication;
-CFStringRef kCTDataConnectionServiceType3GFaceTimeTraffic;
-CFStringRef kCTDataConnectionServiceTypeAppleWirelessDiagnostics;
-CFStringRef kCTDataConnectionServiceTypeCellularDataPlanProvisioning;
-CFStringRef kCTDataConnectionServiceTypeDataTest;
-CFStringRef kCTDataConnectionServiceTypeEntitlementTraffic;
-CFStringRef kCTDataConnectionServiceTypeInternalDataProbe;
-CFStringRef kCTDataConnectionServiceTypeInternet;
-CFStringRef kCTDataConnectionServiceTypeMMS;
-CFStringRef kCTDataConnectionServiceTypeOMADM;
-CFStringRef kCTDataConnectionServiceTypeOTAActivation;
-CFStringRef kCTDataConnectionServiceTypeOTAInternet;
-CFStringRef kCTDataConnectionServiceTypePushEmail;
-CFStringRef kCTDataConnectionServiceTypeVVM;
-CFStringRef kCTDataConnectionServiceTypeWirelessModemAuthentication;
-CFStringRef kCTDataConnectionServiceTypeWirelessModemTraffic;
-CFStringRef kCTDataConnectionServiceTypeZeroRated;
+extern CFStringRef kCTDataConnectionServiceType3GFaceTimeAuthentication;
+extern CFStringRef kCTDataConnectionServiceType3GFaceTimeTraffic;
+extern CFStringRef kCTDataConnectionServiceTypeAppleWirelessDiagnostics;
+extern CFStringRef kCTDataConnectionServiceTypeCellularDataPlanProvisioning;
+extern CFStringRef kCTDataConnectionServiceTypeDataTest;
+extern CFStringRef kCTDataConnectionServiceTypeEntitlementTraffic;
+extern CFStringRef kCTDataConnectionServiceTypeInternalDataProbe;
+extern CFStringRef kCTDataConnectionServiceTypeInternet;
+extern CFStringRef kCTDataConnectionServiceTypeMMS;
+extern CFStringRef kCTDataConnectionServiceTypeOMADM;
+extern CFStringRef kCTDataConnectionServiceTypeOTAActivation;
+extern CFStringRef kCTDataConnectionServiceTypeOTAInternet;
+extern CFStringRef kCTDataConnectionServiceTypePushEmail;
+extern CFStringRef kCTDataConnectionServiceTypeVVM;
+extern CFStringRef kCTDataConnectionServiceTypeWirelessModemAuthentication;
+extern CFStringRef kCTDataConnectionServiceTypeWirelessModemTraffic;
+extern CFStringRef kCTDataConnectionServiceTypeZeroRated;
 
 /*
  * Use 0 for __unknown0.
@@ -54,4 +54,4 @@ void CTRegistrationDataCounterGetAllStatisticsForServiceType(int __unknown0, flo
 
 __END_DECLS
 
-#endif /* _CTRegistration_H_ */
+#endif /* CTREGISTRATION_H_ */

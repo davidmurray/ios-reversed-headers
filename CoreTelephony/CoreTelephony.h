@@ -2,8 +2,8 @@
  * CoreTelephony header file.
  */
 
-#ifndef _CoreTelephony_H_
-#define _CoreTelephony_H_
+#ifndef CORETELEPHONY_H_
+#define CORETELEPHONY_H_
 
 #include "CoreHeaders.h"
 #include "CTCall.h"
@@ -14,4 +14,4 @@
 #include "CTSIMSupport.h"
 #include "CTRegistration.h"
 
-#endif
+#endif /* CORETELEPHONY_H_ */

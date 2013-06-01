@@ -2,8 +2,8 @@
  * CoreTelephony cellular data plan support.
  */
 
-#ifndef _CTCellularDataPlan_H_
-#define _CTCellularDataPlan_H_
+#ifndef CTCELLULARDATAPLAN_H_
+#define CTCELLULARDATAPLAN_H_
 
 #include "CoreHeaders.h"
 
@@ -16,4 +16,4 @@ void CTCellularDataPlanSetIsEnabled(Boolean enabled);
 
 __END_DECLS
 
-#endif /* _CTCellularDataPlan_H_ */
+#endif /* CTCELLULARDATAPLAN_H_ */

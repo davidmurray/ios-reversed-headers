@@ -2,8 +2,8 @@
  * SpringBoardServices framework header.
  */
 
-#ifndef _SpringBoardServices_H_
-#define _SpringBoardServices_H_
+#ifndef SPRINGBOARDSERVICES_H_
+#define SPRINGBOARDSERVICES_H_
 
 #include "CoreHeaders.h"
 
@@ -23,4 +23,4 @@ void SBSSuspendFrontmostApplication();
 
 __END_DECLS
 
-#endif /* _SpringBoardServices_H_ */
+#endif /* SPRINGBOARDSERVICES_H_ */

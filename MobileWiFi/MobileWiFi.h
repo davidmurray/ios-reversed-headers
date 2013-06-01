@@ -2,8 +2,8 @@
  * MobileWiFi framework header.
  */
 
-#ifndef _MobileWiFi_H_
-#define _MobileWiFi_H_
+#ifndef MOBILEWIFI_H_
+#define MOBILEWIFI_H_
 
 #include "CoreHeaders.h"
 
@@ -89,28 +89,28 @@ CFStringRef WiFiDeviceClientGetInterfaceName(WiFiDeviceClientRef client);
 
 #pragma mark - CFStringRef constants
 
-CFStringRef kWiFiATJTestModeEnabledKey;
-CFStringRef kWiFiDeviceCapabilitiesKey;
-CFStringRef kWiFiDeviceSupportsWAPIKey;
-CFStringRef kWiFiDeviceSupportsWoWKey;
-CFStringRef kWiFiDeviceVendorIDKey;
-CFStringRef kWiFiLocaleTestParamsKey;
-CFStringRef kWiFiLoggingDriverFileKey;
-CFStringRef kWiFiLoggingDriverLoggingEnabledKey;
-CFStringRef kWiFiLoggingEnabledKey;
-CFStringRef kWiFiLoggingFileEnabledKey;
-CFStringRef kWiFiLoggingFileKey;
-CFStringRef kWiFiManagerDisableBlackListKey;
-CFStringRef kWiFiNetworkEnterpriseProfileKey;
-CFStringRef kWiFiPreferenceCustomNetworksSettingsKey;
-CFStringRef kWiFiPreferenceEnhancedWoWEnabledKey;
-CFStringRef kWiFiPreferenceMStageAutoJoinKey;
-CFStringRef kWiFiRSSIThresholdKey; // '-80'
-CFStringRef kWiFiScaledRSSIKey;
-CFStringRef kWiFiScaledRateKey;
-CFStringRef kWiFiStrengthKey;
-CFStringRef kWiFiTetheringCredentialsKey;
+extern CFStringRef kWiFiATJTestModeEnabledKey;
+extern CFStringRef kWiFiDeviceCapabilitiesKey;
+extern CFStringRef kWiFiDeviceSupportsWAPIKey;
+extern CFStringRef kWiFiDeviceSupportsWoWKey;
+extern CFStringRef kWiFiDeviceVendorIDKey;
+extern CFStringRef kWiFiLocaleTestParamsKey;
+extern CFStringRef kWiFiLoggingDriverFileKey;
+extern CFStringRef kWiFiLoggingDriverLoggingEnabledKey;
+extern CFStringRef kWiFiLoggingEnabledKey;
+extern CFStringRef kWiFiLoggingFileEnabledKey;
+extern CFStringRef kWiFiLoggingFileKey;
+extern CFStringRef kWiFiManagerDisableBlackListKey;
+extern CFStringRef kWiFiNetworkEnterpriseProfileKey;
+extern CFStringRef kWiFiPreferenceCustomNetworksSettingsKey;
+extern CFStringRef kWiFiPreferenceEnhancedWoWEnabledKey;
+extern CFStringRef kWiFiPreferenceMStageAutoJoinKey;
+extern CFStringRef kWiFiRSSIThresholdKey; // '-80'
+extern CFStringRef kWiFiScaledRSSIKey;
+extern CFStringRef kWiFiScaledRateKey;
+extern CFStringRef kWiFiStrengthKey;
+extern CFStringRef kWiFiTetheringCredentialsKey;
 
 __END_DECLS
 
-#endif /* _MobileWiFi_H_ */
+#endif /* MOBILEWIFI_H_ */

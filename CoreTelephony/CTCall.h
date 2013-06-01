@@ -2,8 +2,8 @@
  * CoreTelephony calling support.
  */
 
-#ifndef _CTCall_H_
-#define _CTCall_H_
+#ifndef CTCALL_H_
+#define CTCALL_H_
 
 #include "CoreHeaders.h"
 
@@ -26,10 +26,10 @@ typedef enum {
 
 typedef CFStringRef CTCallType;
 
-CTCallType kCTCallTypeNormal;
-CTCallType kCTCallTypeVOIP;
-CTCallType kCTCallTypeVideoConference;
-CTCallType kCTCallTypeVoicemail;
+extern CTCallType kCTCallTypeNormal;
+extern CTCallType kCTCallTypeVOIP;
+extern CTCallType kCTCallTypeVideoConference;
+extern CTCallType kCTCallTypeVoicemail;
 
 #pragma mark - API
 
@@ -79,9 +79,9 @@ CTCallRef CTCallDialEmergency(CFStringRef number);
 
 /* For use with the CoreTelephony notification system. */
 
-CFStringRef kCTCallStatusChangeNotification;
-CFStringRef kCTCallIdentificationChangeNotification;
+extern CFStringRef kCTCallStatusChangeNotification;
+extern CFStringRef kCTCallIdentificationChangeNotification;
 
 __END_DECLS
 
-#endif /* _CTCall_H_ */
+#endif /* CTCALL_H_ */

@@ -2,8 +2,8 @@
  * MobileInstallation framework header.
  */
 
-#ifndef _MobileInstallation_H_
-#define _MobileInstallation_H_
+#ifndef MOBILEINSTALLATION_H_
+#define MOBILEINSTALLATION_H_
 
 #include "CoreHeaders.h"
 
@@ -85,4 +85,4 @@ int _MobileInstallationRebuildMap(CFBooleanRef __unknown0, CFBooleanRef __unknow
 
 __END_DECLS
 
-#endif /* _MobileInstallation_H_ */
+#endif /* MOBILEINSTALLATION_H_ */

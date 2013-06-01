@@ -2,8 +2,8 @@
  * TelephonyUI header file.
  */
 
-#ifndef _TelephonyUI_H_
-#define _TelephonyUI_H_
+#ifndef TELEPHONYUI_H_
+#define TELEPHONYUI_H_
 
 #pragma once
 
@@ -20,4 +20,4 @@ CTCallRef TPGetDisplayedCallFromCalls(int __unknown0);
 
 __END_DECLS
 
-#endif /* _TelephonyUI_H_ */
+#endif /* TELEPHONYUI_H_ */

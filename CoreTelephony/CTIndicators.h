@@ -2,8 +2,8 @@
  * CoreTelephony indicators.
  */
 
-#ifndef _CTIndicators_H_
-#define _CTIndicators_H_
+#ifndef CTINDICATORS_H_
+#define CTINDICATORS_H_
 
 #include "CoreHeaders.h"
 
@@ -18,8 +18,8 @@ __BEGIN_DECLS
 void CTIndicatorsGetSignalStrength(long int *raw, int __unknown0, long int *bars);
 
 /* For use with the CoreTelephony notification system. */
-CFStringRef kCTIndicatorsSignalStrengthNotification;
+extern CFStringRef kCTIndicatorsSignalStrengthNotification;
 
 __END_DECLS
 
-#endif /* _CTIndicators_H_ */
+#endif /* CTINDICATORS_H_ */

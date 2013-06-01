@@ -2,8 +2,8 @@
  * CoreTelephony setting.
  */
 
-#ifndef _CTSetting_H_
-#define _CTSetting_H_
+#ifndef CTSETTING_H_
+#define CTSETTING_H_
 
 #include "CoreHeaders.h"
 
@@ -14,4 +14,4 @@ CFDictionaryRef CTSettingCopyMyPhoneNumberExtended();
 
 __END_DECLS
 
-#endif /* _CTSetting_H_ */
+#endif /* CTSETTING_H_ */

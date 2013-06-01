@@ -2,8 +2,8 @@
  * CoreTelephony SIM support.
  */
 
-#ifndef _CTSIMSupport_H_
-#define _CTSIMSupport_H_
+#ifndef CTSIMSUPPORT_H_
+#define CTSIMSUPPORT_H_
 
 #include "CoreHeaders.h"
 
@@ -13,20 +13,20 @@ __BEGIN_DECLS
 
 typedef CFStringRef CTSIMStatus;
 
-CTSIMStatus kCTSIMSupportSIMStatusBlacklisted;
-CTSIMStatus kCTSIMSupportSIMStatusChangeNotification;
-CTSIMStatus kCTSIMSupportSIMStatusCorporateLocked;
-CTSIMStatus kCTSIMSupportSIMStatusFixedDialingLocked;
-CTSIMStatus kCTSIMSupportSIMStatusMemoryFailure;
-CTSIMStatus kCTSIMSupportSIMStatusNetworkLocked;
-CTSIMStatus kCTSIMSupportSIMStatusNotInserted;
-CTSIMStatus kCTSIMSupportSIMStatusNotReady;
-CTSIMStatus kCTSIMSupportSIMStatusOperatorLocked;
-CTSIMStatus kCTSIMSupportSIMStatusOperatorSubsetLocked;
-CTSIMStatus kCTSIMSupportSIMStatusPINLocked;
-CTSIMStatus kCTSIMSupportSIMStatusPUKLocked;
-CTSIMStatus kCTSIMSupportSIMStatusReady;
-CTSIMStatus kCTSIMSupportSIMStatusServiceProviderLocked;
+extern CTSIMStatus kCTSIMSupportSIMStatusBlacklisted;
+extern CTSIMStatus kCTSIMSupportSIMStatusChangeNotification;
+extern CTSIMStatus kCTSIMSupportSIMStatusCorporateLocked;
+extern CTSIMStatus kCTSIMSupportSIMStatusFixedDialingLocked;
+extern CTSIMStatus kCTSIMSupportSIMStatusMemoryFailure;
+extern CTSIMStatus kCTSIMSupportSIMStatusNetworkLocked;
+extern CTSIMStatus kCTSIMSupportSIMStatusNotInserted;
+extern CTSIMStatus kCTSIMSupportSIMStatusNotReady;
+extern CTSIMStatus kCTSIMSupportSIMStatusOperatorLocked;
+extern CTSIMStatus kCTSIMSupportSIMStatusOperatorSubsetLocked;
+extern CTSIMStatus kCTSIMSupportSIMStatusPINLocked;
+extern CTSIMStatus kCTSIMSupportSIMStatusPUKLocked;
+extern CTSIMStatus kCTSIMSupportSIMStatusReady;
+extern CTSIMStatus kCTSIMSupportSIMStatusServiceProviderLocked;
 
 CTSIMStatus CTSIMSupportGetSIMStatus();
 
@@ -35,8 +35,8 @@ CFStringRef CTSIMSupportCopyMobileSubscriberCountryCode(CFAllocatorRef allocator
 CFStringRef CTSIMSupportCopyMobileSubscriberNetworkCode(CFAllocatorRef allocator);
 
 /* For use with the CoreTelephony notification system. */
-CFStringRef kCTSIMSupportSIMStatusChangeNotification;
+extern CFStringRef kCTSIMSupportSIMStatusChangeNotification;
 
 __END_DECLS
 
-#endif /* _CTSIMSupport_H_ */
+#endif /* CTSIMSUPPORT_H_ */

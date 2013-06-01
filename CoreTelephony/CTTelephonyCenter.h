@@ -2,8 +2,8 @@
  * CoreTelephony notification support.
  */
 
-#ifndef _CTTelephonyCenter_H_
-#define _CTTelephonyCenter_H_
+#ifndef CTTELEPHONYCENTER_H_
+#define CTTELEPHONYCENTER_H_
 
 #include "CoreHeaders.h"
 
@@ -18,4 +18,4 @@ void CTTelephonyCenterRemoveEveryObserver(CFNotificationCenterRef center, const 
 
 __END_DECLS
 
-#endif /* _CTTelephonyCenter_H_ */
+#endif /* CTTELEPHONYCENTER_H_ */

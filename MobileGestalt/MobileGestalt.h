@@ -2,8 +2,8 @@
  * libMobileGestalt header.
  */
 
-#ifndef _libMobileGestalt_H_
-#define _libMobileGestalt_H_
+#ifndef LIBMOBILEGESTALT_H_
+#define LIBMOBILEGESTALT_H_
 
 #include "CoreHeaders.h"
 
@@ -164,4 +164,4 @@ static const CFStringRef kMGDeviceSupports1080p = CFSTR("DeviceSupports1080p");
 
 __END_DECLS
 
-#endif /* _libMobileGestalt_H_ */
+#endif /* LIBMOBILEGESTALT_H_ */
