@@ -27,7 +27,7 @@ WiFiManagerRef WiFiManagerClientCreate(CFAllocatorRef allocator, int flags);
 CFArrayRef WiFiManagerClientCopyDevices(WiFiManagerRef manager);
 CFArrayRef WiFiManagerClientCopyNetworks(WiFiManagerRef manager);
 
-WiFiDeviceClientRef WiFiManagerClientGetDevice();
+WiFiDeviceClientRef WiFiManagerClientGetDevice(WiFiManagerRef manager);
 
 void WiFiManagerClientScheduleWithRunLoop(WiFiManagerRef manager, CFRunLoopRef runLoop, CFStringRef mode);
 void WiFiManagerClientUnscheduleFromRunLoop(WiFiManagerRef manager);
