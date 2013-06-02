@@ -5,17 +5,23 @@
 #ifndef CTTELEPHONYCENTER_H_
 #define CTTELEPHONYCENTER_H_
 
-#include "CoreHeaders.h"
+#include <CoreFoundation/CoreFoundation.h>
 
-__BEGIN_DECLS
+#if __cplusplus
+extern "C" {
+#endif
 
 #pragma mark - API
 
-CFNotificationCenterRef CTTelephonyCenterGetDefault(void);
-void CTTelephonyCenterAddObserver(CFNotificationCenterRef center, const void *observer, CFNotificationCallback callBack, CFStringRef name, const void *object, CFNotificationSuspensionBehavior suspensionBehavior);
-void CTTelephonyCenterRemoveObserver(CFNotificationCenterRef center, const void *observer, CFStringRef name, const void *object);
-void CTTelephonyCenterRemoveEveryObserver(CFNotificationCenterRef center, const void *observer);
+    /* This API is a mimic of CFNotificationCenter. */
 
-__END_DECLS
+    CFNotificationCenterRef CTTelephonyCenterGetDefault();
+    void CTTelephonyCenterAddObserver(CFNotificationCenterRef center, const void *observer, CFNotificationCallback callBack, CFStringRef name, const void *object, CFNotificationSuspensionBehavior suspensionBehavior);
+    void CTTelephonyCenterRemoveObserver(CFNotificationCenterRef center, const void *observer, CFStringRef name, const void *object);
+    void CTTelephonyCenterRemoveEveryObserver(CFNotificationCenterRef center, const void *observer);
+
+#if __cplusplus
+}
+#endif
 
 #endif /* CTTELEPHONYCENTER_H_ */

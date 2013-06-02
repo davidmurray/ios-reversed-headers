@@ -5,13 +5,19 @@
 #ifndef CTSETTING_H_
 #define CTSETTING_H_
 
-#include "CoreHeaders.h"
+#include <CoreFoundation/CoreFoundation.h>
 
-__BEGIN_DECLS
+#if __cplusplus
+extern "C" {
+#endif
 
-CFStringRef CTSettingCopyMyPhoneNumber();
-CFDictionaryRef CTSettingCopyMyPhoneNumberExtended();
+#pragma mark - API
 
-__END_DECLS
+    CFStringRef CTSettingCopyMyPhoneNumber();
+    CFDictionaryRef CTSettingCopyMyPhoneNumberExtended();
+
+#if __cplusplus
+}
+#endif
 
 #endif /* CTSETTING_H_ */

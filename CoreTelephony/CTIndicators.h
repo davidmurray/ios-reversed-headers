@@ -5,21 +5,27 @@
 #ifndef CTINDICATORS_H_
 #define CTINDICATORS_H_
 
-#include "CoreHeaders.h"
+#include <CoreFoundation/CoreFoundation.h>
 
-__BEGIN_DECLS
+#if __cplusplus
+extern "C" {
+#endif
 
 #pragma mark - API
 
-/*
- * Use 0 for __unknown0.
- */
+    /*
+     * Use 0 for __unknown0.
+     */
 
-void CTIndicatorsGetSignalStrength(long int *raw, int __unknown0, long int *bars);
+    void CTIndicatorsGetSignalStrength(long int *raw, int __unknown0, long int *bars);
 
-/* For use with the CoreTelephony notification system. */
-extern CFStringRef kCTIndicatorsSignalStrengthNotification;
+#pragma mark - Definitions
 
-__END_DECLS
+    /* For use with the CoreTelephony notification system. */
+    extern CFStringRef kCTIndicatorsSignalStrengthNotification;
+
+#if __cplusplus
+}
+#endif
 
 #endif /* CTINDICATORS_H_ */

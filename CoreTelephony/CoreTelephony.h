@@ -5,7 +5,6 @@
 #ifndef CORETELEPHONY_H_
 #define CORETELEPHONY_H_
 
-#include "CoreHeaders.h"
 #include "CTCall.h"
 #include "CTTelephonyCenter.h"
 #include "CTSetting.h"

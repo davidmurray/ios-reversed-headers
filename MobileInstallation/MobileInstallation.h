@@ -5,84 +5,92 @@
 #ifndef MOBILEINSTALLATION_H_
 #define MOBILEINSTALLATION_H_
 
-#include "CoreHeaders.h"
+#include <CoreFoundation/CoreFoundation.h>
 
-__BEGIN_DECLS
+#if __cplusplus
+extern "C" {
+#endif
 
-typedef void (*MobileInstallationCallback)(CFDictionaryRef information);
+#pragma mark - Definitions
 
-/*
- * 'ReturnAttributes' is one (or an array) of the keys in the dictionary returned by MobileInstallationLookup(NULL).
- * Or 'BundleIDs' which tells installd to return only the bundle identifiers.
- * Extra keys:
- *  - SharedDirSize
- *  - StaticDiskUsage
- *  - DynamicDiskUsage
- *  - ApplicationSINF
- *  - iTunesMetadata
- *  - iTunesArtwork
- *  - GeoJSON
- *  - NewsstandArtwork
- * Example usage:
- *   NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:@"BundleIDs", @"ReturnAttributes", nil];
- *   CFDictionaryRef data = MobileInstallationLookup((CFDictionaryRef)attributes);
- */
+    typedef void (*MobileInstallationCallback)(CFDictionaryRef information);
 
-CFDictionaryRef MobileInstallationLookup(CFDictionaryRef properties);
+#pragma mark - API
 
-/*
- * @param bundleIdentifier: (Required) The application's bundle identfier that you wish to uninstall.
- * @param parameters: (Optional) A dictionary of paramenters. You can safely pass NULL.
- * @param callback: (Optional) A callback function. You can safely pass NULL.
- * @param unknown: (Optional) Unknown. You can safely pass NULL.
- * @return:
- *  -1: Something went wrong. E.g your program doesn't have the necessary entitlements.
- *   0: Everything is okay.
- *
- * Your program needs the "com.apple.private.mobileinstall.allowedSPI" entitlement to use this function with an array containing the 'Uninstall' string.
- *
- * Example:
- *  <key>com.apple.private.mobileinstall.allowedSPI</key>
- *  <true/>
- *  <array>
- *      <string>Uninstall</string>
- *  </array>
- *
- */
+    /*
+     * 'ReturnAttributes' is one (or an array) of the keys in the dictionary returned by MobileInstallationLookup(NULL).
+     * Or 'BundleIDs' which tells installd to return only the bundle identifiers.
+     * Extra keys:
+     *  - SharedDirSize
+     *  - StaticDiskUsage
+     *  - DynamicDiskUsage
+     *  - ApplicationSINF
+     *  - iTunesMetadata
+     *  - iTunesArtwork
+     *  - GeoJSON
+     *  - NewsstandArtwork
+     * Example usage:
+     *   NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:@"BundleIDs", @"ReturnAttributes", nil];
+     *   CFDictionaryRef data = MobileInstallationLookup((CFDictionaryRef)attributes);
+     */
 
-int MobileInstallationUninstall(CFStringRef bundleIdentifier, CFDictionaryRef parameters, MobileInstallationCallback callback, void *unknown);
+    CFDictionaryRef MobileInstallationLookup(CFDictionaryRef properties);
 
-/*
- * @param path: (Required) The path to the IPA file that you wish to install.
- * @param parameters: (Optional) A dictionary of paramenters. You can safely pass NULL.
- * @param callback: (Optional) A callback function. You can safely pass NULL.
- * @param unknown: (Optional) Unknown. You can safely pass NULL.
- * @return:
- *  -1: Something went wrong. E.g your program doesn't have the necessary entitlements or the path is wrong.
- *   0: Everything is okay.
- *
- *  Your program needs the "com.apple.private.mobileinstall.allowedSPI" entitlement to use this function with an array containing the 'Install' string.
- *
- *  <key>com.apple.private.mobileinstall.allowedSPI</key>
- *  <array>
- *      <string>Install</string>
- *  </array>
- */
+    /*
+     * @param bundleIdentifier: (Required) The application's bundle identfier that you wish to uninstall.
+     * @param parameters: (Optional) A dictionary of paramenters. You can safely pass NULL.
+     * @param callback: (Optional) A callback function. You can safely pass NULL.
+     * @param unknown: (Optional) Unknown. You can safely pass NULL.
+     * @return:
+     *  -1: Something went wrong. E.g your program doesn't have the necessary entitlements.
+     *   0: Everything is okay.
+     *
+     * Your program needs the "com.apple.private.mobileinstall.allowedSPI" entitlement to use this function with an array containing the 'Uninstall' string.
+     *
+     * Example:
+     *  <key>com.apple.private.mobileinstall.allowedSPI</key>
+     *  <true/>
+     *  <array>
+     *      <string>Uninstall</string>
+     *  </array>
+     *
+     */
 
-int MobileInstallationInstall(CFStringRef path, CFDictionaryRef parameters, MobileInstallationCallback callback, void *unknown);
+    int MobileInstallationUninstall(CFStringRef bundleIdentifier, CFDictionaryRef parameters, MobileInstallationCallback callback, void *unknown);
 
-/* Same as MobileInstallationInstall. */
+    /*
+     * @param path: (Required) The path to the IPA file that you wish to install.
+     * @param parameters: (Optional) A dictionary of paramenters. You can safely pass NULL.
+     * @param callback: (Optional) A callback function. You can safely pass NULL.
+     * @param unknown: (Optional) Unknown. You can safely pass NULL.
+     * @return:
+     *  -1: Something went wrong. E.g your program doesn't have the necessary entitlements or the path is wrong.
+     *   0: Everything is okay.
+     *
+     *  Your program needs the "com.apple.private.mobileinstall.allowedSPI" entitlement to use this function with an array containing the 'Install' string.
+     *
+     *  <key>com.apple.private.mobileinstall.allowedSPI</key>
+     *  <array>
+     *      <string>Install</string>
+     *  </array>
+     */
 
-int MobileInstallationUpgrade(CFStringRef path, CFDictionaryRef parameters, MobileInstallationCallback callback, void *unknown);
+    int MobileInstallationInstall(CFStringRef path, CFDictionaryRef parameters, MobileInstallationCallback callback, void *unknown);
 
-/*
- * Used to rebuild the application map.
- * See http://gitweb.saurik.com/uikittools.git/blob/HEAD:/extrainst_.mm#l114
- * for more information.
- */
+    /* Same as MobileInstallationInstall. */
 
-int _MobileInstallationRebuildMap(CFBooleanRef __unknown0, CFBooleanRef __unknown1, CFBooleanRef __unknown2);
+    int MobileInstallationUpgrade(CFStringRef path, CFDictionaryRef parameters, MobileInstallationCallback callback, void *unknown);
 
-__END_DECLS
+    /*
+     * Used to rebuild the application map.
+     * See http://gitweb.saurik.com/uikittools.git/blob/HEAD:/extrainst_.mm#l114
+     * for more information.
+     */
+
+    int _MobileInstallationRebuildMap(CFBooleanRef __unknown0, CFBooleanRef __unknown1, CFBooleanRef __unknown2);
+
+#if __cplusplus
+}
+#endif
 
 #endif /* MOBILEINSTALLATION_H_ */

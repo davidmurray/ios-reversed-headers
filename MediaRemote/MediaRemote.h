@@ -5,111 +5,116 @@
 #ifndef MEDIAREMOTE_H_
 #define MEDIAREMOTE_H_
 
-#include "CoreHeaders.h"
+#include <CoreFoundation/CoreFoundation.h>
 
-__BEGIN_DECLS
+#if __cplusplus
+extern "C" {
+#endif
 
 #pragma mark - Notifications
 
-/*
- * These are used on the local notification center.
- */
+    /*
+     * These are used on the local notification center.
+     */
 
-extern CFStringRef kMRMediaRemoteNowPlayingInfoDidChangeNotification;
-extern CFStringRef kMRMediaRemoteNowPlayingPlaybackQueueDidChangeNotification;
-extern CFStringRef kMRMediaRemotePickableRoutesDidChangeNotification;
-extern CFStringRef kMRMediaRemoteNowPlayingApplicationDidChangeNotification;
-extern CFStringRef kMRMediaRemoteNowPlayingApplicationIsPlayingDidChangeNotification;
-extern CFStringRef kMRMediaRemoteRouteStatusDidChangeNotification;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoDidChangeNotification;
+    extern CFStringRef kMRMediaRemoteNowPlayingPlaybackQueueDidChangeNotification;
+    extern CFStringRef kMRMediaRemotePickableRoutesDidChangeNotification;
+    extern CFStringRef kMRMediaRemoteNowPlayingApplicationDidChangeNotification;
+    extern CFStringRef kMRMediaRemoteNowPlayingApplicationIsPlayingDidChangeNotification;
+    extern CFStringRef kMRMediaRemoteRouteStatusDidChangeNotification;
 
 #pragma mark - Keys
 
-extern CFStringRef kMRMediaRemoteNowPlayingApplicationPIDUserInfoKey;
-extern CFStringRef kMRMediaRemoteNowPlayingApplicationIsPlayingUserInfoKey;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoAlbum;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoArtist;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoArtworkData;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoArtworkMIMEType;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoChapterNumber;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoComposer;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoDuration;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoElapsedTime;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoGenre;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoIsAdvertisement;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoIsBanned;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoIsInWishList;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoIsLiked;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoIsMusicApp;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoPlaybackRate;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoProhibitsSkip;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoQueueIndex;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoRadioStationIdentifier;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoRepeatMode;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoShuffleMode;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoStartTime;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoSupportsFastForward15Seconds;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoSupportsIsBanned;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoSupportsIsLiked;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoSupportsRewind15Seconds;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoTimestamp;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoTitle;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoTotalChapterCount;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoTotalDiscCount;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoTotalQueueCount;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoTotalTrackCount;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoTrackNumber;
-extern CFStringRef kMRMediaRemoteNowPlayingInfoUniqueIdentifier;
-extern CFStringRef kMRMediaRemoteOptionMediaType;
-extern CFStringRef kMRMediaRemoteOptionSourceID;
-extern CFStringRef kMRMediaRemoteOptionTrackID;
-extern CFStringRef kMRMediaRemoteRouteDescriptionUserInfoKey;
-extern CFStringRef kMRMediaRemoteRouteStatusUserInfoKey;
+    extern CFStringRef kMRMediaRemoteNowPlayingApplicationPIDUserInfoKey;
+    extern CFStringRef kMRMediaRemoteNowPlayingApplicationIsPlayingUserInfoKey;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoAlbum;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoArtist;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoArtworkData;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoArtworkMIMEType;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoChapterNumber;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoComposer;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoDuration;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoElapsedTime;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoGenre;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoIsAdvertisement;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoIsBanned;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoIsInWishList;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoIsLiked;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoIsMusicApp;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoPlaybackRate;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoProhibitsSkip;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoQueueIndex;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoRadioStationIdentifier;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoRepeatMode;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoShuffleMode;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoStartTime;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoSupportsFastForward15Seconds;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoSupportsIsBanned;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoSupportsIsLiked;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoSupportsRewind15Seconds;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoTimestamp;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoTitle;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoTotalChapterCount;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoTotalDiscCount;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoTotalQueueCount;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoTotalTrackCount;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoTrackNumber;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoUniqueIdentifier;
+    extern CFStringRef kMRMediaRemoteOptionMediaType;
+    extern CFStringRef kMRMediaRemoteOptionSourceID;
+    extern CFStringRef kMRMediaRemoteOptionTrackID;
+    extern CFStringRef kMRMediaRemoteRouteDescriptionUserInfoKey;
+    extern CFStringRef kMRMediaRemoteRouteStatusUserInfoKey;
 
 #pragma mark - API
 
-typedef enum {
-    kMRPlay = 0,
-    kMRPause = 1,
-    kMRTogglePlayPause = 2,
-    kMRStop = 3,
-    kMRNextTrack = 4,
-    kMRPreviousTrack = 5,
-    kMRToggleShuffle = 6,
-    kMRToggleRepeat = 7,
-    kMRStartForwardSeek = 8,
-    kMREndForwardSeek = 9,
-    kMRStartBackwardSeek = 10,
-    kMREndBackwardSeek = 11,
-    kMRGoBackFifteenSeconds = 12,
-    kMRSkipFifteenSeconds = 13,
-} MRCommand;
+    typedef enum {
+        kMRPlay = 0,
+        kMRPause = 1,
+        kMRTogglePlayPause = 2,
+        kMRStop = 3,
+        kMRNextTrack = 4,
+        kMRPreviousTrack = 5,
+        kMRToggleShuffle = 6,
+        kMRToggleRepeat = 7,
+        kMRStartForwardSeek = 8,
+        kMREndForwardSeek = 9,
+        kMRStartBackwardSeek = 10,
+        kMREndBackwardSeek = 11,
+        kMRGoBackFifteenSeconds = 12,
+        kMRSkipFifteenSeconds = 13,
+    } MRCommand;
 
-/*
- * Use 0 for __unknown0.
- */
-Boolean MRMediaRemoteSendCommand(MRCommand command, int __unknown0);
+    /*
+     * Use 0 for __unknown0.
+     */
 
-void MRMediaRemoteSetPlaybackSpeed(int speed);
-void MRMediaRemoteSetElapsedTime(double elapsedTime);
+    Boolean MRMediaRemoteSendCommand(MRCommand command, int __unknown0);
 
-void MRMediaRemoteSetNowPlayingApplicationOverrideEnabled(Boolean enabled);
+    void MRMediaRemoteSetPlaybackSpeed(int speed);
+    void MRMediaRemoteSetElapsedTime(double elapsedTime);
 
-void MRMediaRemoteRegisterForNowPlayingNotifications(dispatch_queue_t queue);
-void MRMediaRemoteUnregisterForNowPlayingNotifications();
+    void MRMediaRemoteSetNowPlayingApplicationOverrideEnabled(Boolean enabled);
 
-void MRMediaRemoteBeginRouteDiscovery(void);
-void MRMediaRemoteEndRouteDiscovery(void);
+    void MRMediaRemoteRegisterForNowPlayingNotifications(dispatch_queue_t queue);
+    void MRMediaRemoteUnregisterForNowPlayingNotifications();
 
-CFArrayRef MRMediaRemoteCopyPickableRoutes();
+    void MRMediaRemoteBeginRouteDiscovery(void);
+    void MRMediaRemoteEndRouteDiscovery(void);
 
-typedef void (^MRMediaRemoteGetNowPlayingInfoCompletion)(CFDictionaryRef information);
-typedef void (^MRMediaRemoteGetNowPlayingApplicationPIDCompletion)(int PID);
-typedef void (^MRMediaRemoteGetNowPlayingApplicationIsPlayingCompletion)(Boolean isPlaying);
+    CFArrayRef MRMediaRemoteCopyPickableRoutes();
 
-void MRMediaRemoteGetNowPlayingApplicationPID(dispatch_queue_t queue, MRMediaRemoteGetNowPlayingApplicationPIDCompletion completion);
-void MRMediaRemoteGetNowPlayingInfo(dispatch_queue_t queue, MRMediaRemoteGetNowPlayingInfoCompletion completion);
-void MRMediaRemoteGetNowPlayingApplicationIsPlaying(dispatch_queue_t queue, MRMediaRemoteGetNowPlayingApplicationIsPlayingCompletion completion);
+    typedef void (^MRMediaRemoteGetNowPlayingInfoCompletion)(CFDictionaryRef information);
+    typedef void (^MRMediaRemoteGetNowPlayingApplicationPIDCompletion)(int PID);
+    typedef void (^MRMediaRemoteGetNowPlayingApplicationIsPlayingCompletion)(Boolean isPlaying);
 
-__END_DECLS
+    void MRMediaRemoteGetNowPlayingApplicationPID(dispatch_queue_t queue, MRMediaRemoteGetNowPlayingApplicationPIDCompletion completion);
+    void MRMediaRemoteGetNowPlayingInfo(dispatch_queue_t queue, MRMediaRemoteGetNowPlayingInfoCompletion completion);
+    void MRMediaRemoteGetNowPlayingApplicationIsPlaying(dispatch_queue_t queue, MRMediaRemoteGetNowPlayingApplicationIsPlayingCompletion completion);
+
+#if __cplusplus
+}
+#endif
 
 #endif /* MEDIAREMOTE_H_ */

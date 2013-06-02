@@ -5,53 +5,59 @@
 #ifndef CTREGISTRATION_H_
 #define CTREGISTRATION_H_
 
-#include "CoreHeaders.h"
+#include <CoreFoundation/CoreFoundation.h>
 
-__BEGIN_DECLS
+#if __cplusplus
+extern "C" {
+#endif
+
+#pragma mark - Definitions
+
+    /* For use with the CoreTelephony notification system. */
+    extern CFStringRef kCTRegistrationStatusChangedNotification;
+    extern CFStringRef kCTRegistrationStateDurationReportNotification;
+    extern CFStringRef kCTRegistrationServiceProviderNameChangedNotification;
+    extern CFStringRef kCTRegistrationOperatorNameChangedNotification;
+    extern CFStringRef kCTRegistrationNewServingNetworkNotification;
+    extern CFStringRef kCTRegistrationDataStatusChangedNotification;
+    extern CFStringRef kCTRegistrationDataActivateFailedNotification;
+    extern CFStringRef kCTRegistrationCellularDataPlanHideIndicatorNotification;
+    extern CFStringRef kCTRegistrationCellularDataPlanActivateFailedNotification;
+    extern CFStringRef kCTRegistrationCustomerServiceProfileUpdateNotification;
+    extern CFStringRef kCTRegistrationCellChangedNotification;
+    extern CFStringRef kCTRegistrationCauseCodeNotification;
+
+    /* Service types. */
+    extern CFStringRef kCTDataConnectionServiceType3GFaceTimeAuthentication;
+    extern CFStringRef kCTDataConnectionServiceType3GFaceTimeTraffic;
+    extern CFStringRef kCTDataConnectionServiceTypeAppleWirelessDiagnostics;
+    extern CFStringRef kCTDataConnectionServiceTypeCellularDataPlanProvisioning;
+    extern CFStringRef kCTDataConnectionServiceTypeDataTest;
+    extern CFStringRef kCTDataConnectionServiceTypeEntitlementTraffic;
+    extern CFStringRef kCTDataConnectionServiceTypeInternalDataProbe;
+    extern CFStringRef kCTDataConnectionServiceTypeInternet;
+    extern CFStringRef kCTDataConnectionServiceTypeMMS;
+    extern CFStringRef kCTDataConnectionServiceTypeOMADM;
+    extern CFStringRef kCTDataConnectionServiceTypeOTAActivation;
+    extern CFStringRef kCTDataConnectionServiceTypeOTAInternet;
+    extern CFStringRef kCTDataConnectionServiceTypePushEmail;
+    extern CFStringRef kCTDataConnectionServiceTypeVVM;
+    extern CFStringRef kCTDataConnectionServiceTypeWirelessModemAuthentication;
+    extern CFStringRef kCTDataConnectionServiceTypeWirelessModemTraffic;
+    extern CFStringRef kCTDataConnectionServiceTypeZeroRated;
 
 #pragma mark - API
 
-/* For use with the CoreTelephony notification system. */
-extern CFStringRef kCTRegistrationStatusChangedNotification;
-extern CFStringRef kCTRegistrationStateDurationReportNotification;
-extern CFStringRef kCTRegistrationServiceProviderNameChangedNotification;
-extern CFStringRef kCTRegistrationOperatorNameChangedNotification;
-extern CFStringRef kCTRegistrationNewServingNetworkNotification;
-extern CFStringRef kCTRegistrationDataStatusChangedNotification;
-extern CFStringRef kCTRegistrationDataActivateFailedNotification;
-extern CFStringRef kCTRegistrationCellularDataPlanHideIndicatorNotification;
-extern CFStringRef kCTRegistrationCellularDataPlanActivateFailedNotification;
-extern CFStringRef kCTRegistrationCustomerServiceProfileUpdateNotification;
-extern CFStringRef kCTRegistrationCellChangedNotification;
-extern CFStringRef kCTRegistrationCauseCodeNotification;
+    /*
+     * Use 0 for __unknown0.
+     * It is actually a pointer to a struct that is used as the return value but you can just use 0.
+     */
 
-/* Service types. */
-extern CFStringRef kCTDataConnectionServiceType3GFaceTimeAuthentication;
-extern CFStringRef kCTDataConnectionServiceType3GFaceTimeTraffic;
-extern CFStringRef kCTDataConnectionServiceTypeAppleWirelessDiagnostics;
-extern CFStringRef kCTDataConnectionServiceTypeCellularDataPlanProvisioning;
-extern CFStringRef kCTDataConnectionServiceTypeDataTest;
-extern CFStringRef kCTDataConnectionServiceTypeEntitlementTraffic;
-extern CFStringRef kCTDataConnectionServiceTypeInternalDataProbe;
-extern CFStringRef kCTDataConnectionServiceTypeInternet;
-extern CFStringRef kCTDataConnectionServiceTypeMMS;
-extern CFStringRef kCTDataConnectionServiceTypeOMADM;
-extern CFStringRef kCTDataConnectionServiceTypeOTAActivation;
-extern CFStringRef kCTDataConnectionServiceTypeOTAInternet;
-extern CFStringRef kCTDataConnectionServiceTypePushEmail;
-extern CFStringRef kCTDataConnectionServiceTypeVVM;
-extern CFStringRef kCTDataConnectionServiceTypeWirelessModemAuthentication;
-extern CFStringRef kCTDataConnectionServiceTypeWirelessModemTraffic;
-extern CFStringRef kCTDataConnectionServiceTypeZeroRated;
+    void CTRegistrationDataCounterGetAllStatistics(int __unknown0, float *bytesSent, float *bytesReceived);
+    void CTRegistrationDataCounterGetAllStatisticsForServiceType(int __unknown0, float *bytesSent, float *bytesReceived, CFStringRef serviceType);
 
-/*
- * Use 0 for __unknown0.
- * It is actually a pointer to a struct that is used as the return value but you can just use 0.
- */
-
-void CTRegistrationDataCounterGetAllStatistics(int __unknown0, float *bytesSent, float *bytesReceived);
-void CTRegistrationDataCounterGetAllStatisticsForServiceType(int __unknown0, float *bytesSent, float *bytesReceived, CFStringRef serviceType);
-
-__END_DECLS
+#if __cplusplus
+}
+#endif
 
 #endif /* CTREGISTRATION_H_ */

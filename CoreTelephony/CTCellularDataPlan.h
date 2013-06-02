@@ -5,15 +5,19 @@
 #ifndef CTCELLULARDATAPLAN_H_
 #define CTCELLULARDATAPLAN_H_
 
-#include "CoreHeaders.h"
+#include <CoreFoundation/CoreFoundation.h>
 
-__BEGIN_DECLS
+#if __cplusplus
+extern "C" {
+#endif
 
 #pragma mark - API
 
-Boolean CTCellularDataPlanGetIsEnabled();
-void CTCellularDataPlanSetIsEnabled(Boolean enabled);
+    Boolean CTCellularDataPlanGetIsEnabled();
+    void CTCellularDataPlanSetIsEnabled(Boolean enabled);
 
-__END_DECLS
+#if __cplusplus
+}
+#endif
 
 #endif /* CTCELLULARDATAPLAN_H_ */

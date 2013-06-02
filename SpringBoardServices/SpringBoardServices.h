@@ -5,22 +5,28 @@
 #ifndef SPRINGBOARDSERVICES_H_
 #define SPRINGBOARDSERVICES_H_
 
-#include "CoreHeaders.h"
+#include <CoreFoundation/CoreFoundation.h>
 
-__BEGIN_DECLS
+#if __cplusplus
+extern "C" {
+#endif
 
-void SBSOpenNewsstand();
+#pragma mark - API
 
-CFStringRef SBSCopyBundlePathForDisplayIdentifier(CFStringRef displayIdentifier);
-CFStringRef SBSCopyExecutablePathForDisplayIdentifier(CFStringRef displayIdentifier);
-CFDataRef SBSCopyIconImagePNGDataForDisplayIdentifier(CFStringRef displayIdentifier);
+    void SBSOpenNewsstand();
 
-CFStringRef SBSCopyFrontmostApplicationDisplayIdentifier();
-CFStringRef SBSCopyDisplayIdentifierForProcessID(pid_t PID);
-CFArrayRef SBSCopyDisplayIdentifiersForProcessID(pid_t PID);
+    CFStringRef SBSCopyBundlePathForDisplayIdentifier(CFStringRef displayIdentifier);
+    CFStringRef SBSCopyExecutablePathForDisplayIdentifier(CFStringRef displayIdentifier);
+    CFDataRef SBSCopyIconImagePNGDataForDisplayIdentifier(CFStringRef displayIdentifier);
 
-void SBSSuspendFrontmostApplication();
+    CFStringRef SBSCopyFrontmostApplicationDisplayIdentifier();
+    CFStringRef SBSCopyDisplayIdentifierForProcessID(pid_t PID);
+    CFArrayRef SBSCopyDisplayIdentifiersForProcessID(pid_t PID);
 
-__END_DECLS
+    void SBSSuspendFrontmostApplication();
+
+#if __cplusplus
+}
+#endif
 
 #endif /* SPRINGBOARDSERVICES_H_ */
