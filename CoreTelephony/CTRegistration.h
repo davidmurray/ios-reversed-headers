@@ -46,6 +46,12 @@ extern "C" {
     extern CFStringRef kCTDataConnectionServiceTypeWirelessModemTraffic;
     extern CFStringRef kCTDataConnectionServiceTypeZeroRated;
 
+    /* Data rates. */
+    extern CFStringRef const kCTRegistrationDataRateUnknown;
+    extern CFStringRef const kCTRegistrationDataRate2G;
+    extern CFStringRef const kCTRegistrationDataRate3G;
+    extern CFStringRef const kCTRegistrationDataRate4G;
+
 #pragma mark - API
 
     /*
@@ -55,6 +61,10 @@ extern "C" {
 
     void CTRegistrationDataCounterGetAllStatistics(int __unknown0, float *bytesSent, float *bytesReceived);
     void CTRegistrationDataCounterGetAllStatisticsForServiceType(int __unknown0, float *bytesSent, float *bytesReceived, CFStringRef serviceType);
+
+    CFArrayRef CTRegistrationCopySupportedDataRates();
+    CFStringRef CTRegistrationGetCurrentMaxAllowedDataRate();
+    void CTRegistrationSetMaxAllowedDataRate(CFStringRef dataRate);
 
 #if __cplusplus
 }
