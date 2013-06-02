@@ -22,7 +22,9 @@ extern "C" {
     CFStringRef SBSCopyFrontmostApplicationDisplayIdentifier();
     CFStringRef SBSCopyDisplayIdentifierForProcessID(pid_t PID);
     CFArrayRef SBSCopyDisplayIdentifiersForProcessID(pid_t PID);
+	pid_t SBSProcessIDForDisplayIdentifier(CFStringRef displayIdentifier);	
 
+	int SBSLaunchApplicationWithIdentifierAndLaunchOptions(CFStringRef identifier, CFDictionaryRef launchOptions, BOOL suspended);	
     void SBSSuspendFrontmostApplication();
 
 #if __cplusplus
