@@ -21,6 +21,7 @@ extern "C" {
     typedef struct __WiFiNetwork      *WiFiNetworkRef;
     typedef struct __WiFiManager      *WiFiManagerRef;
 
+    typedef void (*WiFiDeviceClientLQMCallback)(WiFiDeviceClientRef device, CFDictionaryRef data, const void *object);
     typedef void (*WiFiDeviceScanCallback)(WiFiDeviceClientRef device, CFArrayRef results, CFErrorRef error, void *token);
     typedef void (*WiFiDeviceAssociateCallback)(WiFiDeviceClientRef device, WiFiNetworkRef network, CFDictionaryRef dict, CFErrorRef error, void *token);
 
@@ -90,6 +91,9 @@ extern "C" {
     void WiFiDeviceClientDisassociate(WiFiDeviceClientRef client);
 
     CFStringRef WiFiDeviceClientGetInterfaceName(WiFiDeviceClientRef client);
+
+    /* LQ stands for 'Link Quality', also known as signal strength. */
+    void WiFiDeviceClientRegisterLQMCallback(WiFiDeviceClientRef device, WiFiDeviceClientLQMCallback callback, const void *object);
 
 #pragma mark - CFStringRef constants
 

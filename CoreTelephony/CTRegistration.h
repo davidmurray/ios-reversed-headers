@@ -66,6 +66,8 @@ extern "C" {
     CFStringRef CTRegistrationGetCurrentMaxAllowedDataRate();
     void CTRegistrationSetMaxAllowedDataRate(CFStringRef dataRate);
 
+    CFStringRef CTRegistrationCopyLocalizedOperatorName(CFAllocatorRef allocator);
+
 #if __cplusplus
 }
 #endif

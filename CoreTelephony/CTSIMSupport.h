@@ -41,6 +41,10 @@ extern "C" {
     CFStringRef CTSIMSupportCopyMobileSubscriberCountryCode(CFAllocatorRef allocator);
     CFStringRef CTSIMSupportCopyMobileSubscriberNetworkCode(CFAllocatorRef allocator);
 
+    int CTSIMSupportGetRemainingPINAttempts();
+    int CTSIMSupportGetRemainingPUKAttempts();
+    void CTSIMSupportPINUnlock(CFStringRef code);
+
 #if __cplusplus
 }
 #endif

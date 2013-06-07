@@ -13,11 +13,7 @@ extern "C" {
 
 #pragma mark - API
 
-    /*
-     * Use 0 for __unknown0.
-     */
-
-    void CTIndicatorsGetSignalStrength(long int *raw, int __unknown0, long int *bars);
+    void CTIndicatorsGetSignalStrength(long int *raw, long int *percentage, long int *bars);
 
 #pragma mark - Definitions
 
