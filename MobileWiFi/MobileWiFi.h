@@ -22,6 +22,7 @@ extern "C" {
     typedef struct __WiFiManager      *WiFiManagerRef;
 
     typedef void (*WiFiDeviceClientCallback)(WiFiDeviceClientRef device, CFDictionaryRef data, const void *object);
+    typedef void (*WiFiDeviceClientLinkCallback)(WiFiDeviceClientRef device, const void *object);
     typedef void (*WiFiDeviceScanCallback)(WiFiDeviceClientRef device, CFArrayRef results, CFErrorRef error, void *token);
     typedef void (*WiFiDeviceAssociateCallback)(WiFiDeviceClientRef device, WiFiNetworkRef network, CFDictionaryRef dict, CFErrorRef error, void *token);
 
@@ -96,7 +97,7 @@ extern "C" {
     void WiFiDeviceClientRegisterLQMCallback(WiFiDeviceClientRef device, WiFiDeviceClientCallback callback, const void *object);
 
     void WiFiDeviceClientRegisterExtendedLinkCallback(WiFiDeviceClientRef device, WiFiDeviceClientCallback callback, const void *object);
-    void WiFiDeviceClientRegisterLinkCallback(WiFiDeviceClientRef device, void *callback, const void *object);
+    void WiFiDeviceClientRegisterLinkCallback(WiFiDeviceClientRef device, WiFiDeviceClientLinkCallback callback, const void *object);
 #pragma mark - CFStringRef constants
 
     extern CFStringRef kWiFiATJTestModeEnabledKey;
