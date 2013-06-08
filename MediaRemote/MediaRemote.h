@@ -90,12 +90,12 @@ extern "C" {
      * Use 0 for __unknown0.
      */
 
-    Booleanean MRMediaRemoteSendCommand(MRCommand command, int __unknown0);
+    Boolean MRMediaRemoteSendCommand(MRCommand command, int __unknown0);
 
     void MRMediaRemoteSetPlaybackSpeed(int speed);
     void MRMediaRemoteSetElapsedTime(double elapsedTime);
 
-    void MRMediaRemoteSetNowPlayingApplicationOverrideEnabled(Booleanean enabled);
+    void MRMediaRemoteSetNowPlayingApplicationOverrideEnabled(Boolean enabled);
 
     void MRMediaRemoteRegisterForNowPlayingNotifications(dispatch_queue_t queue);
     void MRMediaRemoteUnregisterForNowPlayingNotifications();
@@ -107,7 +107,7 @@ extern "C" {
 
     typedef void (^MRMediaRemoteGetNowPlayingInfoCompletion)(CFDictionaryRef information);
     typedef void (^MRMediaRemoteGetNowPlayingApplicationPIDCompletion)(int PID);
-    typedef void (^MRMediaRemoteGetNowPlayingApplicationIsPlayingCompletion)(Booleanean isPlaying);
+    typedef void (^MRMediaRemoteGetNowPlayingApplicationIsPlayingCompletion)(Boolean isPlaying);
 
     void MRMediaRemoteGetNowPlayingApplicationPID(dispatch_queue_t queue, MRMediaRemoteGetNowPlayingApplicationPIDCompletion completion);
     void MRMediaRemoteGetNowPlayingInfo(dispatch_queue_t queue, MRMediaRemoteGetNowPlayingInfoCompletion completion);
