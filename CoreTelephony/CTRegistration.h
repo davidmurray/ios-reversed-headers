@@ -67,6 +67,11 @@ extern "C" {
     void CTRegistrationSetMaxAllowedDataRate(CFStringRef dataRate);
 
     CFStringRef CTRegistrationCopyLocalizedOperatorName(CFAllocatorRef allocator);
+    CFStringRef CTRegistrationCopyServiceProviderName(CFAllocatorRef allocator);
+
+    /* Equivalent to CTCellularDataPlan functions. */
+    void CTRegistrationSetCellularDataIsEnabled(Boolean enabled);
+    Boolean CTRegistrationGetCellularDataIsEnabled();
 
 #if __cplusplus
 }

@@ -5,100 +5,15 @@
 #ifndef MOBILEWIFI_H_
 #define MOBILEWIFI_H_
 
-#include <CoreFoundation/CoreFoundation.h>
+#include "WiFiDeviceClient.h"
+#include "WiFiNetwork.h"
+#include "WiFiManager.h"
 
 #if __cplusplus
 extern "C" {
 #endif
 
-#pragma mark - Definitions
-
-    /*
-     * Opaque structure definitions.
-     */
-
-    typedef struct __WiFiDeviceClient *WiFiDeviceClientRef;
-    typedef struct __WiFiNetwork      *WiFiNetworkRef;
-    typedef struct __WiFiManager      *WiFiManagerRef;
-
-    typedef void (*WiFiDeviceClientCallback)(WiFiDeviceClientRef device, CFDictionaryRef data, const void *object);
-    typedef void (*WiFiDeviceClientLinkCallback)(WiFiDeviceClientRef device, const void *object);
-    typedef void (*WiFiDeviceScanCallback)(WiFiDeviceClientRef device, CFArrayRef results, CFErrorRef error, void *token);
-    typedef void (*WiFiDeviceAssociateCallback)(WiFiDeviceClientRef device, WiFiNetworkRef network, CFDictionaryRef dict, CFErrorRef error, void *token);
-
-#pragma mark - WiFi Manager Functions
-
-    WiFiManagerRef WiFiManagerClientCreate(CFAllocatorRef allocator, int flags);
-
-    CFArrayRef WiFiManagerClientCopyDevices(WiFiManagerRef manager);
-    CFArrayRef WiFiManagerClientCopyNetworks(WiFiManagerRef manager);
-
-    WiFiDeviceClientRef WiFiManagerClientGetDevice(WiFiManagerRef manager);
-
-    void WiFiManagerClientScheduleWithRunLoop(WiFiManagerRef manager, CFRunLoopRef runLoop, CFStringRef mode);
-    void WiFiManagerClientUnscheduleFromRunLoop(WiFiManagerRef manager);
-    void WiFiManagerClientSetProperty(WiFiManagerRef manager, CFStringRef property, CFPropertyListRef value);
-
-    CFPropertyListRef WiFiManagerClientCopyProperty(WiFiManagerRef manager, CFStringRef property);
-
-#pragma mark - MIS (Mobile Internet Sharing) Functions
-
-    void WiFiManagerClientSetMISState(WiFiManagerRef manager, int state);
-    void WiFiManagerClientSetMisPassword(WiFiManagerRef manager, CFStringRef password);
-    void WiFiManagerClientSetMISDiscoveryState(WiFiManagerRef manager, int state);
-
-    int WiFiManagerClientGetMISState(WiFiManagerRef manager);
-    int WiFiManagerClientGetMISDiscoveryState(WiFiManagerRef manager);
-
-#pragma mark - WiFi Network Functions
-
-    CFPropertyListRef WiFiNetworkGetProperty(WiFiNetworkRef network, CFStringRef property);
-
-    int WiFiNetworkGetIntProperty(WiFiNetworkRef network, CFStringRef property);
-
-    float WiFiNetworkGetFloatProperty(WiFiNetworkRef network, CFStringRef property);
-
-    CFStringRef WiFiNetworkCopyPassword(WiFiNetworkRef);
-    CFStringRef WiFiNetworkGetSSID(WiFiNetworkRef network);
-
-    void WiFiNetworkSetPassword(WiFiNetworkRef network, CFStringRef password);
-
-    float WiFiNetworkGetNetworkUsage(WiFiNetworkRef network);
-
-    Boolean WiFiNetworkIsWEP(WiFiNetworkRef network);
-    Boolean WiFiNetworkIsWPA(WiFiNetworkRef network);
-    Boolean WiFiNetworkIsEAP(WiFiNetworkRef network);
-    Boolean WiFiNetworkIsApplePersonalHotspot(WiFiNetworkRef network);
-    Boolean WiFiNetworkIsAdHoc(WiFiNetworkRef network);
-    Boolean WiFiNetworkIsHidden(WiFiNetworkRef network);
-    Boolean WiFiNetworkRequiresPassword(WiFiNetworkRef network);
-    Boolean WiFiNetworkRequiresUsername(WiFiNetworkRef network);
-
-    CFDateRef WiFiNetworkGetLastAssociationDate(WiFiNetworkRef network);
-
-    CFDictionaryRef WiFiNetworkCopyRecord(WiFiNetworkRef network);
-
-#pragma mark - WiFi Device Client Functions
-
-    CFPropertyListRef WiFiDeviceClientCopyProperty(WiFiDeviceClientRef client, CFStringRef property);
-
-    WiFiNetworkRef WiFiDeviceClientCopyCurrentNetwork(WiFiDeviceClientRef client);
-
-    int WiFiDeviceClientGetPower(WiFiDeviceClientRef client);
-
-    void WiFiDeviceClientScanAsync(WiFiDeviceClientRef device, CFDictionaryRef dict, WiFiDeviceScanCallback callback, uint32_t flags);
-    void WiFiDeviceClientAssociateAsync(WiFiDeviceClientRef client, WiFiNetworkRef network, WiFiDeviceAssociateCallback callback, CFDictionaryRef dict);
-    void WiFiDeviceClientAssociateCancel(WiFiDeviceClientRef client);
-    void WiFiDeviceClientDisassociate(WiFiDeviceClientRef client);
-
-    CFStringRef WiFiDeviceClientGetInterfaceName(WiFiDeviceClientRef client);
-
-    /* LQ stands for 'Link Quality', also known as signal strength. */
-    void WiFiDeviceClientRegisterLQMCallback(WiFiDeviceClientRef device, WiFiDeviceClientCallback callback, const void *object);
-
-    void WiFiDeviceClientRegisterExtendedLinkCallback(WiFiDeviceClientRef device, WiFiDeviceClientCallback callback, const void *object);
-    void WiFiDeviceClientRegisterLinkCallback(WiFiDeviceClientRef device, WiFiDeviceClientLinkCallback callback, const void *object);
-#pragma mark - CFStringRef constants
+#pragma mark - Constants
 
     extern CFStringRef kWiFiATJTestModeEnabledKey;
     extern CFStringRef kWiFiDeviceCapabilitiesKey;
