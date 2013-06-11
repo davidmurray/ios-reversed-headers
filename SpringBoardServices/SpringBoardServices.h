@@ -1,5 +1,8 @@
 /*
  * SpringBoardServices framework header.
+ * Borrows work done by KennyTM.
+ * See https://github.com/kennytm/iphone-private-frameworks/blob/master/SpringBoardServices/SpringBoardServices.h
+ * for more information.
  */
 
 #ifndef SPRINGBOARDSERVICES_H_
@@ -14,6 +17,7 @@ extern "C" {
 #pragma mark - API
 
     void SBSOpenNewsstand();
+    void SBSSuspendFrontmostApplication();
 
     CFStringRef SBSCopyBundlePathForDisplayIdentifier(CFStringRef displayIdentifier);
     CFStringRef SBSCopyExecutablePathForDisplayIdentifier(CFStringRef displayIdentifier);
@@ -22,10 +26,11 @@ extern "C" {
     CFStringRef SBSCopyFrontmostApplicationDisplayIdentifier();
     CFStringRef SBSCopyDisplayIdentifierForProcessID(pid_t PID);
     CFArrayRef SBSCopyDisplayIdentifiersForProcessID(pid_t PID);
-	BOOL SBSProcessIDForDisplayIdentifier(CFStringRef identifier, pid_t *pid);
+    BOOL SBSProcessIDForDisplayIdentifier(CFStringRef identifier, pid_t *pid);
 
-	int SBSLaunchApplicationWithIdentifierAndLaunchOptions(CFStringRef identifier, CFDictionaryRef launchOptions, BOOL suspended);	
-    void SBSSuspendFrontmostApplication();
+    int SBSLaunchApplicationWithIdentifier(CFStringRef identifier, Boolean suspended);
+    int SBSLaunchApplicationWithIdentifierAndLaunchOptions(CFStringRef identifier, CFDictionaryRef launchOptions, BOOL suspended);
+    CFStringRef SBSApplicationLaunchingErrorString(int error);
 
 #if __cplusplus
 }
