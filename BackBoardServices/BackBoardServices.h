@@ -36,8 +36,10 @@ extern "C" {
 	typedef struct BKSDisplayBrightnessTransaction *BKSDisplayBrightnessTransactionRef;
 
 #pragma mark - API
-	/* Level should be fron 0.0 to 1.0. */
-	void BKSDisplayBrightnessSet(float level, int _unknown /* use 1 */);
+	/* Level should be fron 0.0 to 1.0.
+	 * Use 1 for __unknown0.
+	 */
+	void BKSDisplayBrightnessSet(float level, int __unknown0);
 
 	/* Returns a value from 0.0 to 1.0. */
 	float BKSDisplayBrightnessGetCurrent();
@@ -54,8 +56,10 @@ extern "C" {
 	 */
 
 	void BKSTerminateApplicationForReasonAndReportWithDescription(CFStringRef applicationIdentifier, int __unknown0, int __unknown1, CFStringRef description);
-
 	void BKSTerminateApplicationGroupForReasonAndReportWithDescription(int __unknown0, int __unknown1, int __unknown2, CFStringRef description);
+
+	void BKSHIDServicesLockOrientation();
+	void BKSHIDServicesUnlockOrientation();
 
 #if __cplusplus
 }
