@@ -1,5 +1,6 @@
 /*
  * BackBoardServices framework header.
+ * Borrows work done by @ProtoSphere7.
  */
 
 #ifndef BACKBOARDSERVICES_H_
@@ -34,6 +35,7 @@ extern "C" {
 	} BKSProcessAssertionReason;
 
 	typedef struct BKSDisplayBrightnessTransaction *BKSDisplayBrightnessTransactionRef;
+	typedef void (^BKSProcessAssertionCompletion)(BOOL success);
 
 #pragma mark - API
 	/* Level should be fron 0.0 to 1.0.

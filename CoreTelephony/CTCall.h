@@ -35,9 +35,18 @@ extern "C" {
     extern CTCallType kCTCallTypeVideoConference;
     extern CTCallType kCTCallTypeVoicemail;
 
+    /* For use with the CoreTelephony notification system. */
+
+    extern CFStringRef kCTCallStatusChangeNotification;
+    extern CFStringRef kCTCallIdentificationChangeNotification;
+
 #pragma mark - API
 
     CFArrayRef CTCopyCurrentCalls(CFAllocatorRef allocator);
+
+    /* 'types' is an array of CTCallTypes. */
+    CFArrayRef CTCopyCurrentCallsWithTypes(CFAllocatorRef allocator, CFArrayRef types);
+
     int CTGetCurrentCallCount();
 
     CFStringRef CTCallCopyAddress(CFAllocatorRef allocator, CTCallRef call);
@@ -80,13 +89,6 @@ extern "C" {
 
     CTCallRef CTCallDial(CFStringRef number);
     CTCallRef CTCallDialEmergency(CFStringRef number);
-
-#pragma mark - Definitions
-
-    /* For use with the CoreTelephony notification system. */
-
-    extern CFStringRef kCTCallStatusChangeNotification;
-    extern CFStringRef kCTCallIdentificationChangeNotification;
 
 #if __cplusplus
 }
