@@ -1,5 +1,6 @@
 /*
  * libMobileGestalt header.
+ * Mobile gestalt functions as a QA system. You ask it a question, and it gives you the answer! :)
  */
 
 #ifndef LIBMOBILEGESTALT_H_
@@ -14,6 +15,21 @@ extern "C" {
 #pragma mark - API
 
     CFPropertyListRef MGCopyAnswer(CFStringRef property);
+
+    /*
+     * Arguments are still a mistery.
+     * CFPropertyListRef MGCopyAnswerWithError(CFStringRef question, int *error, ...);
+     */
+
+    /* Use 0 for __unknown0. */
+    CFPropertyListRef MGCopyMultipleAnswers(CFArrayRef questions, int __unknown0);
+
+    /*
+     * Not all questions are assignable.
+     * For example, kMGUserAssignedDeviceName is assignable but
+     * kMGProductType is not.
+     */
+    int MGSetAnswer(CFStringRef question, CFTypeRef answer);
 
 #pragma mark - Identifying Information
 
