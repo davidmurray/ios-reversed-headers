@@ -13,7 +13,7 @@ extern "C" {
 
 #pragma mark - API
 
-    void CTIndicatorsGetSignalStrength(long int *raw, long int *percentage, long int *bars);
+    void CTIndicatorsGetSignalStrength(long int *raw, long int *graded, long int *bars);
 
 #pragma mark - Definitions
 
