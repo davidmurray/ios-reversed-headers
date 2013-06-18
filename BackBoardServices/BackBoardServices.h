@@ -34,11 +34,12 @@ extern "C" {
 		BKSProcessAssertionReasonViewServices
 	} BKSProcessAssertionReason;
 
-	typedef struct BKSDisplayBrightnessTransaction *BKSDisplayBrightnessTransactionRef;
 	typedef void (^BKSProcessAssertionCompletion)(BOOL success);
+	typedef struct BKSDisplayBrightnessTransaction *BKSDisplayBrightnessTransactionRef;
 
 #pragma mark - API
-	/* Level should be fron 0.0 to 1.0.
+	/*
+	 * Level should be from 0.0 to 1.0.
 	 * Use 1 for __unknown0.
 	 */
 	void BKSDisplayBrightnessSet(float level, int __unknown0);
@@ -53,7 +54,8 @@ extern "C" {
 
 	void BKSHIDServicesSetBacklightFactorWithFadeDuration(float factor, int duration);
 
-	/* Check out http://iphonedevwiki.net/index.php/BackBoardServices.framework
+	/*
+	 * Check out http://iphonedevwiki.net/index.php/BackBoardServices.framework
 	 * for more information on BKSTerminate functions.
 	 */
 
