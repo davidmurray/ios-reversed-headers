@@ -81,15 +81,27 @@ extern "C" {
 
     /*
      * Use 0 for __unknown0.
-     * It is actually a pointer to a struct that is used as the return value but you can just use 0.
+     * It is actually a pointer to a struct that is used as the return value but you can just use 0 (NULL).
      */
 
     void CTRegistrationDataCounterGetAllStatistics(int __unknown0, float *bytesSent, float *bytesReceived);
     void CTRegistrationDataCounterGetAllStatisticsForServiceType(int __unknown0, float *bytesSent, float *bytesReceived, CFStringRef serviceType);
 
+    void CTRegistrationDataCounterReset();
+
+    /*
+     * Returns the number of seconds since 1 January 2001, GMT.
+     * Use +[NSDate dateWithTimeIntervalSinceReferenceDate:].
+     */
+
+    double CTRegistrationDataCounterGetLastResetTime();
+
     CFArrayRef CTRegistrationCopySupportedDataRates();
     CFStringRef CTRegistrationGetCurrentMaxAllowedDataRate();
     void CTRegistrationSetMaxAllowedDataRate(CFStringRef dataRate);
+
+    /* Use 0 for __unknown0. */
+    Boolean CTRegistrationGetDataContextActive(int __unknown0);
 
     CFStringRef CTRegistrationCopyLocalizedOperatorName(CFAllocatorRef allocator);
     CFStringRef CTRegistrationCopyServiceProviderName(CFAllocatorRef allocator);

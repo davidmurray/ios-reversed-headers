@@ -69,7 +69,7 @@ extern "C" {
 
     CFArrayRef CTCopyCurrentCalls(CFAllocatorRef allocator);
 
-    /* 'types' is an array of CTCallTypes. */
+    /* The 'types' argument is an array of CTCallTypes. */
     CFArrayRef CTCopyCurrentCallsWithTypes(CFAllocatorRef allocator, CFArrayRef types);
 
     int CTGetCurrentCallCount();
@@ -90,6 +90,8 @@ extern "C" {
     /* Pass NULL to delete all calls. */
     void CTCallDeleteAllCallsBeforeDate(CFDateRef date);
     void CTCallHistoryInvalidateCaches();
+
+    void CTCallTimersReset();
 
     void CTCallAnswer(CTCallRef call);
     void CTCallHold(CTCallRef call);

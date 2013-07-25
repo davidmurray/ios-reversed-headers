@@ -59,7 +59,8 @@ extern "C" {
 
     int WiFiDeviceClientGetPower(WiFiDeviceClientRef client);
 
-    void WiFiDeviceClientScanAsync(WiFiDeviceClientRef device, CFDictionaryRef dict, WiFiDeviceScanCallback callback, uint32_t flags);
+    /* Use 0 for flags. */
+    void WiFiDeviceClientScanAsync(WiFiDeviceClientRef device, CFDictionaryRef dict, WiFiDeviceScanCallback callback, int flags);
     void WiFiDeviceClientAssociateAsync(WiFiDeviceClientRef client, WiFiNetworkRef network, WiFiDeviceAssociateCallback callback, CFDictionaryRef dict);
     void WiFiDeviceClientAssociateCancel(WiFiDeviceClientRef client);
     void WiFiDeviceClientDisassociate(WiFiDeviceClientRef client);
