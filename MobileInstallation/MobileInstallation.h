@@ -47,8 +47,8 @@ extern "C" {
      * Or 'BundleIDs' which tells installd to return only the bundle identifiers.
      * Extra keys:
      *  - SharedDirSize
-     *  - StaticDiskUsage
-     *  - DynamicDiskUsage
+     *  - StaticDiskUsage <- This is the number of bytes used by the app itself.
+     *  - DynamicDiskUsage <- Documents & data that the app has.
      *  - ApplicationSINF
      *  - iTunesMetadata
      *  - iTunesArtwork
