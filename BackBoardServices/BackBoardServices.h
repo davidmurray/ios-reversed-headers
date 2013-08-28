@@ -42,7 +42,7 @@ extern "C" {
 	#define BKSProcessAssertionFlagNone 0
 	#define BKSProcessAssertionFlagPreventSuspend (1 << 0)
 	#define BKSProcessAssertionFlagPreventThrottleDownCPU (1 << 1)
-	#define BKSProcessAssertionFlagPreventIdleSleep (1 << 2)
+	#define BKSProcessAssertionFlagAllowIdleSleep (1 << 2)
 	#define BKSProcessAssertionFlagWantsForegroundResourcePriority (1 << 3)
 
 	typedef enum {
