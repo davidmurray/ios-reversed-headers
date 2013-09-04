@@ -117,6 +117,9 @@ extern "C" {
     CTCallRef CTCallDial(CFStringRef number);
     CTCallRef CTCallDialEmergency(CFStringRef number);
 
+    /* Returns the call history. */
+    CFArrayRef _CTCallCopyAllCalls();
+
 #if __cplusplus
 }
 #endif
