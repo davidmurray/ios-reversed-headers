@@ -112,7 +112,7 @@ extern "C" {
      * for more information.
      */
 
-    int _MobileInstallationRebuildMap(CFBooleanRef __unknown0, CFBooleanRef __unknown1, CFBooleanRef __unknown2);
+    int _MobileInstallationRebuildMap(CFBooleanRef rebuildUser, CFBooleanRef rebuildSystem, CFBooleanRef rebuildInternal);
 
 #if __cplusplus
 }
