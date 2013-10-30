@@ -81,8 +81,8 @@ extern "C" {
 
     CFStringRef CTCallCopyUniqueStringID(CFAllocatorRef allocator, CTCallRef call);
 
-    double CTCallGetDuration(CTCallRef call);
-    double CTCallGetStartTime(CTCallRef call);
+    BOOL CTCallGetStartTime(CTCallRef, double *);
+    BOOL CTCallGetDuration(CTCallRef, double *);
 
     CTCallStatus CTCallGetStatus(CTCallRef call);
     CTCallType CTCallGetCallType(CTCallRef call);
