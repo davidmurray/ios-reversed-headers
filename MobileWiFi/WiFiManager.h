@@ -40,29 +40,31 @@ extern "C" {
 
 #pragma mark - Definitions
 
-    typedef struct __WiFiManager *WiFiManagerRef;
+	typedef struct __WiFiManager *WiFiManagerRef;
 
 #pragma mark - API
 
-    WiFiManagerRef WiFiManagerClientCreate(CFAllocatorRef allocator, int flags);
+	WiFiManagerRef WiFiManagerClientCreate(CFAllocatorRef allocator, int flags);
 
-    CFArrayRef WiFiManagerClientCopyDevices(WiFiManagerRef manager);
-    CFArrayRef WiFiManagerClientCopyNetworks(WiFiManagerRef manager);
+	CFArrayRef WiFiManagerClientCopyDevices(WiFiManagerRef manager);
+	CFArrayRef WiFiManagerClientCopyNetworks(WiFiManagerRef manager);
 
-    WiFiDeviceClientRef WiFiManagerClientGetDevice(WiFiManagerRef manager);
+	void WiFiManagerClientRemoveNetwork(WiFiManagerRef manager, WiFiNetworkRef network);
 
-    void WiFiManagerClientScheduleWithRunLoop(WiFiManagerRef manager, CFRunLoopRef runLoop, CFStringRef mode);
-    void WiFiManagerClientUnscheduleFromRunLoop(WiFiManagerRef manager);
-    void WiFiManagerClientSetProperty(WiFiManagerRef manager, CFStringRef property, CFPropertyListRef value);
+	WiFiDeviceClientRef WiFiManagerClientGetDevice(WiFiManagerRef manager);
 
-    CFPropertyListRef WiFiManagerClientCopyProperty(WiFiManagerRef manager, CFStringRef property);
+	void WiFiManagerClientScheduleWithRunLoop(WiFiManagerRef manager, CFRunLoopRef runLoop, CFStringRef mode);
+	void WiFiManagerClientUnscheduleFromRunLoop(WiFiManagerRef manager);
+	void WiFiManagerClientSetProperty(WiFiManagerRef manager, CFStringRef property, CFPropertyListRef value);
 
-    void WiFiManagerClientSetMISState(WiFiManagerRef manager, int state);
-    void WiFiManagerClientSetMisPassword(WiFiManagerRef manager, CFStringRef password);
-    void WiFiManagerClientSetMISDiscoveryState(WiFiManagerRef manager, int state);
+	CFPropertyListRef WiFiManagerClientCopyProperty(WiFiManagerRef manager, CFStringRef property);
 
-    int WiFiManagerClientGetMISState(WiFiManagerRef manager);
-    int WiFiManagerClientGetMISDiscoveryState(WiFiManagerRef manager);
+	void WiFiManagerClientSetMISState(WiFiManagerRef manager, int state);
+	void WiFiManagerClientSetMisPassword(WiFiManagerRef manager, CFStringRef password);
+	void WiFiManagerClientSetMISDiscoveryState(WiFiManagerRef manager, int state);
+
+	int WiFiManagerClientGetMISState(WiFiManagerRef manager);
+	int WiFiManagerClientGetMISDiscoveryState(WiFiManagerRef manager);
 
 #if __cplusplus
 }
