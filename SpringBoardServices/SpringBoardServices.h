@@ -1,5 +1,6 @@
 /*
  * SpringBoardServices framework header.
+ *
  * Borrows work done by KennyTM.
  * See https://github.com/kennytm/iphone-private-frameworks/blob/master/SpringBoardServices/SpringBoardServices.h
  * for more information.
@@ -40,6 +41,9 @@ extern "C" {
 #endif
 
 #pragma mark - API
+
+    mach_port_t SBSSpringBoardServerPort();
+    void SBSetSystemVolumeHUDEnabled(mach_port_t springBoardPort, const char *audioCategory, Boolean enabled);
 
     void SBSOpenNewsstand();
     void SBSSuspendFrontmostApplication();
