@@ -48,8 +48,8 @@ extern "C" {
     /* Callback typedefs. */
     typedef void (*WiFiDeviceClientCallback)(WiFiDeviceClientRef device, CFDictionaryRef data, const void *object);
     typedef void (*WiFiDeviceClientLinkCallback)(WiFiDeviceClientRef device, const void *object);
-    typedef void (*WiFiDeviceScanCallback)(WiFiDeviceClientRef device, CFArrayRef results, CFErrorRef error, void *token);
-    typedef void (*WiFiDeviceAssociateCallback)(WiFiDeviceClientRef device, WiFiNetworkRef network, CFDictionaryRef dict, CFErrorRef error, void *token);
+    typedef void (*WiFiDeviceScanCallback)(WiFiDeviceClientRef device, CFArrayRef results, int error, const void *object);
+    typedef void (*WiFiDeviceAssociateCallback)(WiFiDeviceClientRef device, WiFiNetworkRef network, CFDictionaryRef dict, int error, const void *object);
 
 #pragma mark - API
 
@@ -60,15 +60,31 @@ extern "C" {
     int WiFiDeviceClientGetPower(WiFiDeviceClientRef client);
     void WiFiDeviceClientSetPower(WiFiDeviceClientRef client, int power);
 
-    /* Use 0 for flags. */
-    void WiFiDeviceClientScanAsync(WiFiDeviceClientRef device, CFDictionaryRef dict, WiFiDeviceScanCallback callback, int flags);
-    void WiFiDeviceClientAssociateAsync(WiFiDeviceClientRef client, WiFiNetworkRef network, WiFiDeviceAssociateCallback callback, CFDictionaryRef dict);
+    /*
+     * The following keys in the dict parameter are understood by wifid:
+     * "SCAN_CHANNELS": An array of dictionaries containing the 'CHANNEL' and 'CHANNEL_FLAGS' keys.
+     * "SCAN_MAXAGE": Unknown. Use 2.
+     * "SCAN_MERGE": Unknown. Use 1.
+     * "SCAN_NUM_SCANS": Number of scans to perform.
+     * "SCAN_PHY_MODE": Has something to do with PHY.
+     * "SCAN_RSSI_THRESHOLD": The RSSI theshold level. Apple uses -80, meaning that networks that have a signal strength lower than -80 will be ignored.
+     * "SCAN_TYPE": Unknown. Use 1.
+     */
+    int WiFiDeviceClientScanAsync(WiFiDeviceClientRef device, CFDictionaryRef dict, WiFiDeviceScanCallback callback, const void *object);
+
+    /*
+     * Used to connect to a network. Example usage:
+     *    (Get a WiFiNetworkRef instance from the scan results or something.)
+     *    WiFiNetworkSetPassword(network, CFSTR("Password1"));
+     *    WiFiDeviceClientAssociateAsync(client, network, MyCallbackFunction, NULL);
+     */
+    int WiFiDeviceClientAssociateAsync(WiFiDeviceClientRef client, WiFiNetworkRef network, WiFiDeviceAssociateCallback callback, CFDictionaryRef dict);
     void WiFiDeviceClientAssociateCancel(WiFiDeviceClientRef client);
     void WiFiDeviceClientDisassociate(WiFiDeviceClientRef client);
 
     CFStringRef WiFiDeviceClientGetInterfaceName(WiFiDeviceClientRef client);
 
-    /* LQ stands for 'Link Quality', also known as signal strength. */
+    /* I think LQM stands for 'Link Quality Monitoring', also known as signal strength. */
     void WiFiDeviceClientRegisterLQMCallback(WiFiDeviceClientRef device, WiFiDeviceClientCallback callback, const void *object);
     void WiFiDeviceClientRegisterExtendedLinkCallback(WiFiDeviceClientRef device, WiFiDeviceClientCallback callback, const void *object);
     void WiFiDeviceClientRegisterLinkCallback(WiFiDeviceClientRef device, WiFiDeviceClientLinkCallback callback, const void *object);

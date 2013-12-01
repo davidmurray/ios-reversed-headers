@@ -68,6 +68,7 @@ extern "C" {
     Boolean WiFiNetworkRequiresPassword(WiFiNetworkRef network);
     Boolean WiFiNetworkRequiresUsername(WiFiNetworkRef network);
 
+    /* This returns NULL a lot, not sure why. */
     CFDateRef WiFiNetworkGetLastAssociationDate(WiFiNetworkRef network);
 
     CFDictionaryRef WiFiNetworkCopyRecord(WiFiNetworkRef network);
