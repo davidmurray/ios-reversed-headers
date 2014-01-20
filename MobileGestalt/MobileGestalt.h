@@ -41,6 +41,8 @@ extern "C" {
 
     CFPropertyListRef MGCopyAnswer(CFStringRef property);
 
+    Boolean MGGetBoolAnswer(CFStringRef property);
+
     /*
      * Arguments are still a mistery.
      * CFPropertyListRef MGCopyAnswerWithError(CFStringRef question, int *error, ...);
