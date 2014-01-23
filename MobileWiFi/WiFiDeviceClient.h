@@ -84,7 +84,11 @@ extern "C" {
 
     CFStringRef WiFiDeviceClientGetInterfaceName(WiFiDeviceClientRef client);
 
-    /* I think LQM stands for 'Link Quality Monitoring', also known as signal strength. */
+    /* 
+     * LQM stands for 'Link Quality Metrics':
+     * Jan 23 15:25:01  kernel[0] <Debug>: 187357.621783 wlan.A[13651] AppleBCMWLANNetManager::updateLinkQualityMetrics(): Report LQM to User Land 50, fAverageRSSI -71
+     */
+
     void WiFiDeviceClientRegisterLQMCallback(WiFiDeviceClientRef device, WiFiDeviceClientCallback callback, const void *object);
     void WiFiDeviceClientRegisterExtendedLinkCallback(WiFiDeviceClientRef device, WiFiDeviceClientCallback callback, const void *object);
     void WiFiDeviceClientRegisterLinkCallback(WiFiDeviceClientRef device, WiFiDeviceClientLinkCallback callback, const void *object);
