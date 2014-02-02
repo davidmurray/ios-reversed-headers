@@ -46,8 +46,8 @@ extern "C" {
     typedef struct __WiFiDeviceClient *WiFiDeviceClientRef;
 
     /* Callback typedefs. */
-    typedef void (*WiFiDeviceClientCallback)(WiFiDeviceClientRef device, CFDictionaryRef data, const void *object);
-    typedef void (*WiFiDeviceClientLinkCallback)(WiFiDeviceClientRef device, const void *object);
+    typedef void (*WiFiDeviceClientGenericCallback)(WiFiDeviceClientRef device, CFDictionaryRef data, const void *object);
+    typedef void (*WiFiDeviceClientLinkOrPowerCallback)(WiFiDeviceClientRef device, const void *object);
     typedef void (*WiFiDeviceScanCallback)(WiFiDeviceClientRef device, CFArrayRef results, int error, const void *object);
     typedef void (*WiFiDeviceAssociateCallback)(WiFiDeviceClientRef device, WiFiNetworkRef network, CFDictionaryRef dict, int error, const void *object);
 
@@ -89,9 +89,10 @@ extern "C" {
      * Jan 23 15:25:01  kernel[0] <Debug>: 187357.621783 wlan.A[13651] AppleBCMWLANNetManager::updateLinkQualityMetrics(): Report LQM to User Land 50, fAverageRSSI -71
      */
 
-    void WiFiDeviceClientRegisterLQMCallback(WiFiDeviceClientRef device, WiFiDeviceClientCallback callback, const void *object);
-    void WiFiDeviceClientRegisterExtendedLinkCallback(WiFiDeviceClientRef device, WiFiDeviceClientCallback callback, const void *object);
-    void WiFiDeviceClientRegisterLinkCallback(WiFiDeviceClientRef device, WiFiDeviceClientLinkCallback callback, const void *object);
+    void WiFiDeviceClientRegisterLQMCallback(WiFiDeviceClientRef device, WiFiDeviceClientGenericCallback callback, const void *object);
+    void WiFiDeviceClientRegisterExtendedLinkCallback(WiFiDeviceClientRef device, WiFiDeviceClientGenericCallback callback, const void *object);
+    void WiFiDeviceClientRegisterLinkCallback(WiFiDeviceClientRef device, WiFiDeviceClientLinkOrPowerCallback callback, const void *object);
+    void WiFiDeviceClientRegisterPowerCallback(WiFiDeviceClientRef device, WiFiDeviceClientLinkOrPowerCallback callback, const void *object);
 
 #if __cplusplus
 }
