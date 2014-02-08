@@ -59,6 +59,8 @@ extern "C" {
 
 	CFPropertyListRef WiFiManagerClientCopyProperty(WiFiManagerRef manager, CFStringRef property);
 
+	void WiFiManagerClientQuiesceWiFi(WiFiManagerRef manager, int state);
+
 	void WiFiManagerClientSetMISState(WiFiManagerRef manager, int state);
 	void WiFiManagerClientSetMisPassword(WiFiManagerRef manager, CFStringRef password);
 	void WiFiManagerClientSetMISDiscoveryState(WiFiManagerRef manager, int state);
