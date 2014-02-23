@@ -52,6 +52,8 @@ extern "C" {
     CFStringRef SBSCopyExecutablePathForDisplayIdentifier(CFStringRef displayIdentifier);
     CFDataRef SBSCopyIconImagePNGDataForDisplayIdentifier(CFStringRef displayIdentifier);
 
+    CFSetRef SBSCopyDisplayIdentifiers();
+
     CFStringRef SBSCopyFrontmostApplicationDisplayIdentifier();
     CFStringRef SBSCopyDisplayIdentifierForProcessID(pid_t PID);
     CFArrayRef SBSCopyDisplayIdentifiersForProcessID(pid_t PID);
