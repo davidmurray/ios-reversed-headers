@@ -86,15 +86,22 @@ extern "C" {
     extern CFStringRef kMRMediaRemoteNowPlayingInfoTotalTrackCount;
     extern CFStringRef kMRMediaRemoteNowPlayingInfoTrackNumber;
     extern CFStringRef kMRMediaRemoteNowPlayingInfoUniqueIdentifier;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoRadioStationIdentifier;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoRadioStationHash;
     extern CFStringRef kMRMediaRemoteOptionMediaType;
     extern CFStringRef kMRMediaRemoteOptionSourceID;
     extern CFStringRef kMRMediaRemoteOptionTrackID;
+    extern CFStringRef kMRMediaRemoteOptionStationID;
+    extern CFStringRef kMRMediaRemoteOptionStationHash;
     extern CFStringRef kMRMediaRemoteRouteDescriptionUserInfoKey;
     extern CFStringRef kMRMediaRemoteRouteStatusUserInfoKey;
 
 #pragma mark - API
 
     typedef enum {
+        /*
+         * Use nil for userInfo.
+         */
         kMRPlay = 0,
         kMRPause = 1,
         kMRTogglePlayPause = 2,
@@ -109,13 +116,19 @@ extern "C" {
         kMREndBackwardSeek = 11,
         kMRGoBackFifteenSeconds = 12,
         kMRSkipFifteenSeconds = 13,
+        
+        /*
+         * Use a NSDictionary for userInfo, which contains three keys:
+         * kMRMediaRemoteOptionTrackID
+         * kMRMediaRemoteOptionStationID
+         * kMRMediaRemoteOptionStationHash
+         */
+        kMRLikeTrack = 0x6A,
+        kMRBanTrack = 0x6B,
+        kMRAddTrackToWishList = 0x6D
     } MRCommand;
 
-    /*
-     * Use 0 for __unknown0.
-     */
-
-    Boolean MRMediaRemoteSendCommand(MRCommand command, int __unknown0);
+    Boolean MRMediaRemoteSendCommand(MRCommand command, id userInfo);
 
     void MRMediaRemoteSetPlaybackSpeed(int speed);
     void MRMediaRemoteSetElapsedTime(double elapsedTime);
