@@ -125,7 +125,8 @@ extern "C" {
          */
         kMRLikeTrack = 0x6A,
         kMRBanTrack = 0x6B,
-        kMRAddTrackToWishList = 0x6D
+        kMRAddTrackToWishList = 0x6C,
+        kMRRemoveTrackToWishList = 0x6D
     } MRCommand;
 
     Boolean MRMediaRemoteSendCommand(MRCommand command, id userInfo);
