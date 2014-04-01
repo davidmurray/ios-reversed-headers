@@ -27,8 +27,8 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef MEDIAREMOTE_H_
-#define MEDIAREMOTE_H_
+#ifndef MOBILEICONS_H_
+#define MOBILEICONS_H_
 
 #include <CoreFoundation/CoreFoundation.h>
 
