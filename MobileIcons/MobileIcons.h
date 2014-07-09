@@ -37,7 +37,7 @@ extern "C" {
 #endif
 
     CFArrayRef LICopyIconPathsFromBundle(CFBundleRef bundle);
-	CGImageRef LICreateDefaultIcon(int variant);
+    CGImageRef LICreateDefaultIcon(int variant);
     CGImageRef LICreateIconForBundle(CFBundleRef bundle);
     CGImageRef LICreateIconForImage(CGImageRef image, int variant, int precomposed);
 
