@@ -58,7 +58,7 @@ extern "C" {
      */
     int WiFiDeviceClientAssociateAsync(WiFiDeviceClientRef client, WiFiNetworkRef network, WiFiDeviceAssociateCallback callback, CFDictionaryRef dict);
     void WiFiDeviceClientAssociateCancel(WiFiDeviceClientRef client);
-    void WiFiDeviceClientDisassociate(WiFiDeviceClientRef client);
+    int WiFiDeviceClientDisassociate(WiFiDeviceClientRef client);
 
     CFStringRef WiFiDeviceClientGetInterfaceName(WiFiDeviceClientRef client);
 
