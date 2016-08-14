@@ -15,5 +15,6 @@
 #include "CTCellularDataPlan.h"
 #include "CTSIMSupport.h"
 #include "CTRegistration.h"
+#include "CTServerConnection.h"
 
 #endif /* CORETELEPHONY_H_ */
