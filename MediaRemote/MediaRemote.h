@@ -45,6 +45,7 @@ extern "C" {
     extern CFStringRef kMRMediaRemoteNowPlayingInfoIsInWishList;
     extern CFStringRef kMRMediaRemoteNowPlayingInfoIsLiked;
     extern CFStringRef kMRMediaRemoteNowPlayingInfoIsMusicApp;
+    extern CFStringRef kMRMediaRemoteNowPlayingInfoMediaType
     extern CFStringRef kMRMediaRemoteNowPlayingInfoPlaybackRate;
     extern CFStringRef kMRMediaRemoteNowPlayingInfoProhibitsSkip;
     extern CFStringRef kMRMediaRemoteNowPlayingInfoQueueIndex;
